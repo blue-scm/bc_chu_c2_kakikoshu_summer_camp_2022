@@ -1,0 +1,91 @@
+<mt:Ignore><!-- 画像パス --></mt:Ignore>
+<mt:Var name="img" value="assets/img/">
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<mt:Include module="HTMLヘッダー">
+
+</head>
+
+<body>
+
+    <header>
+        <!-- ベネッセヘッダー領域 -->
+    </header>
+
+    <body>
+
+        <div class="l-content">
+            <div class="l-content__inner top -loading">
+
+                <section class="top__header">
+                    <h1 class="top__header__logo"><img src="<mt:Var name="img">top/logo_summer_camp.png" alt="チャレ友SUMMERCAMP"></h1>
+                    <p class="top__header__txt -calendar"><a class="js-modal-open" href="#1">カレンダーを設定する</a></p>
+                    <p class="top__header__txt -hatena"><a class="js-modal-open" href="#2">SUMMER CAMPとは？</a></p>
+                    <p class="top__header__btn js-uliza-open" data-path="assets/_inc/mov_yoshida.html"><img src="<mt:Var name="img">top/btn_mov.png" alt="吉田沙保里さんからのスペシャルメッセージ"></p>
+                    <p class="top__header__txt -play"><a class="js-modal-open" href="#0">オープニングムービー</a></p>
+                </section><!-- /.top__header -->
+
+                <div id="js-slider" class="top__slider">
+                    <div id="js-nav" class="top__slider__inner">
+
+                        <mt:Ignore><!-- 記事一覧を取得 --></mt:Ignore>
+                        <mt:Entries sort_by="basename" sort_order="ascend">
+                            <mt:If tag="SummerTemplate" eq="下層ページ">
+                                <p class="top__slider__btn -<mt:EntryBasename> js-nav-item"><a href="<mt:EntryPermalink>"><em>DAY<span><mt:Var name="__counter__"></span></em><time></time></a></p>
+                            </mt:If>
+                        </mt:Entries>
+
+                        <p class="top__slider__omake js-nav-item" ><span class="js-uliza-open" data-path="assets/_inc/mov_nobu.html"><img src="<mt:Var name="img">top/btn_omake.png" alt="ノブさんの修了証"></span></p>
+                        <p class="top__slider__fireworks<mt:If tag="SummerFireworks"> -close</mt:If>"><a href="https://blog.benesse.ne.jp/chu5/hanabi2019/" target="_blank"><img src="<mt:Var name="img">top/btn_fireworks_slider.png" alt="8/7（水）花火大会 会場へGO!"></a></p>
+                    </div>
+                    <button class="top__slider__arrow -prev"></button>
+                    <button class="top__slider__arrow -next"></button>
+
+                    <div id="js-guide-calendar" class="guide -calendar">
+                        <p class="guide__txt">未来の日付は選択できないよ！<br>予定よりも早く取り組みたいときは、カレンダーを再設定しよう。</p>
+                        <p class="guide__txt -calendar"><a class="js-modal-open" href="#1">カレンダーを設定する</a></p>
+                        <button class="guide__close"></button>
+                    </div><!-- /.guide -->
+
+                </div><!-- /.top__slider -->
+
+                <div id="js-footer" class="top__footer<mt:If tag="SummerFireworks"> -close</mt:If>">
+                    <a href="https://blog.benesse.ne.jp/chu5/hanabi2019/" target="_blank">
+                        <p class="top__footer__btn"><img src="<mt:Var name="img">top/btn_fireworks_footer.png" alt="8/7（水）花火大会 マークテスト一斉取組日"></p>
+                        <p class="top__footer__txt">カウンターの数を増やして<br>花火をゴージャスにしよう!</p>
+                        <dl class="top__footer__num -submission">
+                            <dt><img src="<mt:Var name="img">top/ttl_submission.png" alt="チャレ友のマークテスト提出総数"></dt>
+                            <dd data-target="marktest"><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span></dd>
+                        </dl>
+                        <dl class="top__footer__num -correct">
+                            <dt><img src="<mt:Var name="img">top/ttl_correct.png" alt="キミのレッスン100%正答数"></dt>
+                            <dd><span>0</span><span>0</span></dd>
+                        </dl>
+                    </a>
+                </div><!-- /.top__footer -->
+
+                <section class="l-comment">
+                    <mt:Include module="comment_admin">
+                    <mt:Include module="comment_user">
+                </section><!-- /.l-comment -->
+
+                <mt:Include module="共通">
+
+            </div>
+        </div><!-- /.l-content -->
+
+        <script src="<mt:BlogURL>assets/js/summer_camp.js"></script>
+
+    </body>
+
+    <footer>
+        <!-- ベネッセフッター領域 -->
+    </footer>
+
+</body>
+
+</html>

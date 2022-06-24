@@ -1,0 +1,189 @@
+/* ==========================================================================
+    サマーキャンプ 下層ページ 右側
+========================================================================== */
+
+.lower__right {
+    flex-basis: 450px;
+    max-width: 450px;
+    padding: 30px 15px 0;
+
+    &__ttl {
+        color: #0057a1;
+        font-weight: bold;
+        line-height: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include fontsize(26);
+    }
+
+    &__txt {
+        background: url(#{$fileDir}lower/bg_dot.png) repeat;
+        height: calc(2px + 2 * 3em);
+        line-height: 2;
+        margin-top: 20px;
+        overflow: hidden;
+        padding: 1px 0;
+        @include fontsize(20);
+    }
+
+    &__desc {
+        align-items: center;
+        display: flex;
+        font-weight: bold;
+        justify-content: space-between;
+        line-height: 1.5;
+        margin-top: 5px;
+        @include fontsize(14);
+    }
+
+    &__speech {
+        align-items: center;
+        background-color: #cce9f8;
+        border-radius: 9999px;
+        display: flex;
+        flex-basis: 310px;
+        height: 100px;
+        justify-content: center;
+        margin-right: -12px;
+        max-width: 310px;
+        position: relative;
+
+        span {
+            flex-basis: 266px;
+            max-height: 1.5 * 4em;
+            max-width: 266px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        &:before {
+            @include absPosition(6px, null, null, 0);
+            content: url(#{$fileDir}lower/bg_speech.png);
+            font-size: 0;
+        }
+    }
+
+    &__img {
+        flex-basis: 122px;
+        max-width: 122px;
+    }
+
+    &__work {
+        align-content: flex-start;
+        background: #0057a1 url(#{$fileDir}lower/bg_header.png) repeat;
+        border-radius: 54px 0 30px 0;
+        color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: bold;
+        height: 128px;
+        line-height: 1;
+        padding: 20px 0 0 20px;
+        width: 460px;
+        @include absPosition(null, null, 0, 0);
+    }
+
+    &__btn {
+        background-color: #e6e6e6;
+        border-radius: 9999px;
+        box-shadow: 0 5px #b3b3b3;
+        color: #b3b3b3;
+        cursor: pointer;
+        flex-basis: 258px;
+        font-weight: bold;
+        height: 68px;
+        max-width: 258px;
+        padding: 0;
+        pointer-events: none;
+        position: relative;
+        text-align: center;
+        @include fontsize(22);
+
+        &:before {
+            content: '取り組み完了!';
+            white-space: pre;
+        }
+
+        &:after {
+            border-right: 2px solid #333;
+            border-top: 2px solid #333;
+            content: '';
+            display: none;
+            padding: 3px;
+            transform: rotate(45deg) translateY(-50%);
+            @include absPosition(50%, null, null, 22px);
+        }
+
+        &.-active {
+            background-color: #ffff46;
+            box-shadow: 0 5px #878415;
+            color: #333;
+            padding: 0 0 0 30px;
+            pointer-events: auto;
+            text-align: left;
+
+            &:before {
+                content: '今日やることを\A確認したらタップ!';
+            }
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    &__num {
+        flex-basis: 148px;
+        height: 73px;
+        margin: 0 0 0 15px;
+        max-width: 148px;
+
+        dt {
+            @include fontsize(14);
+
+            em {
+                font-family: urw-din-condensed, sans-serif;
+                font-style: normal;
+            }
+
+            span {
+                font-family: gill-sans-nova, sans-serif;
+            }
+        }
+
+        dd {
+            margin: 5px 0 0;
+            text-align: center;
+
+            span {
+                background-color: #fff;
+                border-radius: 4px;
+                color: #333;
+                display: inline-block;
+                line-height: 54px;
+                width: 25px;
+                @include fontsize(22);
+
+                & + * {
+                    margin-left: 2px;
+                }
+            }
+
+            &:after {
+                content: '人';
+                margin-left: 2px;
+                vertical-align: bottom;
+                @include fontsize(13);
+            }
+        }
+    }
+
+    &__note {
+        flex-basis: 100%;
+        font-weight: normal;
+        margin-top: 10px;
+        max-width: 100%;
+        @include fontsize(11);
+    }
+}

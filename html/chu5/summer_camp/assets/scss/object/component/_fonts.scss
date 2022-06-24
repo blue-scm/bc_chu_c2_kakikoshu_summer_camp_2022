@@ -1,0 +1,27 @@
+/* ==========================================================================
+	fonts
+========================================================================== */
+
+.c-font-mincho{
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", serif;
+}
+
+//行頭役物半角詰め
+.c-yakumono {
+  margin-left: -.5em;
+}
+
+//背景画像のalt用
+.c-hidetxt {
+  text-indent: 200%;//100だと出る画像がある
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+//汎用文字組みエレメント
+.c-bodytxt { @include fontsize(16); }
+
+//bodyで指定するかも
+.c-caption { @include fontsize(13); line-height: 1.6; }
+
+.c-name { @include fontsize(14); line-height: 1.6; }

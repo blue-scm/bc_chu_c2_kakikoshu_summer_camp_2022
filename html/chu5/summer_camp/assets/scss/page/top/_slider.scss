@@ -1,0 +1,340 @@
+/* ==========================================================================
+    サマーキャンプ トップページ スライダー
+========================================================================== */
+
+.top__slider {
+    height: 650px;
+    overflow: hidden;
+    position: relative;
+    width: 1020px;
+
+    &__inner {
+        background: url(#{$fileDir}common/bg_common.png) no-repeat;
+        font-weight: bold;
+        height: 100%;
+        position: relative;
+        width: 2640px;
+
+        .user {
+            height: 78px;
+            line-height: 1;
+            text-align: center;
+            width: 78px;
+            @include absPosition(-50px, 150px);
+            @include fontsize(11);
+
+            img {
+                max-width: 130%;
+                transform: translate(-50%, -50%);
+                @include absPosition(50%, 50%);
+            }
+
+            .avatar {
+                background-color: #f2f2f2;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(#000, 0.3);
+                display: block;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .name {
+                background-color: #fff;
+                border-radius: 0 0 10px 10px;
+                max-height: 30px;
+                padding: 4px;
+                width: 100%;
+                @include absPosition(null, 0, 0);
+            }
+
+            &:after {
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #fff;
+                content: '';
+                transform: translateX(-50%);
+                @include absPosition(null, 50%, -5px);
+            }
+        }
+    }
+
+    &__btn {
+        width: 319px;
+
+        a {
+            background: url(#{$fileDir}top/btn_date_close.png) no-repeat;
+            align-items: center;
+            display: flex;
+            height: 141px;
+            opacity: 0;
+            transform: scale(0.5);
+            position: relative;
+        }
+
+        em {
+            color: #ccc;
+            font-family: urw-din-condensed, sans-serif;
+            font-style: normal;
+            height: 96px;
+            line-height: 1;
+            margin: 0 0.5em 0 23px;
+            padding-top: 0.7em;
+            text-align: center;
+            width: 96px;
+            @include fontsize(23);
+
+            span {
+                display: block;
+                font-family: gill-sans-nova, sans-serif;
+                margin-top: -0.2em;
+                @include fontsize(53);
+            }
+        }
+
+        time {
+            color: #fff;
+            @include fontsize(30);
+        }
+
+        &:before {
+            border-left: 3px dotted #fff;
+            content: '';
+            transform: scaleY(0);
+            transform-origin: center bottom;
+            @include absPosition(100px, 140px);
+        }
+
+        &.-day3,
+        &.-day6 {
+            a:after {
+                content: url(#{$fileDir}top/txt_special.png);
+                font-size: 0;
+                @include absPosition(null, 25px, 10px);
+            }
+        }
+
+        &.-day1 {
+            @include absPosition(320px, 60px);
+
+            &:before {
+                height: 65px;
+            }
+        }
+
+        &.-day2 {
+            @include absPosition(230px, 340px);
+
+            &:before {
+                height: 155px;
+            }
+        }
+
+        &.-day3 {
+            @include absPosition(320px, 620px);
+
+            &:before {
+                height: 105px;
+            }
+        }
+
+        &.-day4 {
+            @include absPosition(230px, 900px);
+
+            &:before {
+                height: 90px;
+            }
+        }
+
+        &.-day5 {
+            @include absPosition(320px, 1180px);
+
+            &:before {
+                height: 40px;
+            }
+        }
+
+        &.-day6 {
+            @include absPosition(230px, 1460px);
+
+            &:before {
+                height: 85px;
+            }
+        }
+
+        &.-day7 {
+            @include absPosition(320px, 1740px);
+
+            &:before {
+                height: 105px;
+            }
+        }
+
+        &.-day8 {
+            @include absPosition(230px, 2020px);
+
+            &:before {
+                height: 130px;
+            }
+        }
+
+        &.-active {
+            a {
+                background-image: url(#{$fileDir}top/btn_date.png);
+            }
+
+            em {
+                color: #0057a1;
+            }
+        }
+
+        &.-already {
+            a {
+                background-image: url(#{$fileDir}top/btn_date_already.png);
+
+                &:after {
+                    content: url(#{$fileDir}common/ico_already.png);
+                    font-size: 0;
+                    @include absPosition(16px, 16px);
+                }
+            }
+
+            em {
+                color: #0057a1;
+            }
+        }
+
+        &.-display {
+            a {
+                opacity: 1;
+                transform: none;
+            }
+
+            &:before {
+                transform: none;
+            }
+        }
+
+        @for $i from 1 through 8 {
+            &.-day#{$i} {
+                a {
+                    transition: all 0.5s #{0.25 * $i + 0.25}s;
+                }
+
+                &:before {
+                    transition: transform 0.5s #{0.25 * $i}s;
+                }
+            }
+        }
+    }
+
+    &__omake {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.5s 2.5s;
+        @include absPosition(150px, 2280px);
+
+        span {
+            cursor: pointer;
+            display: none;
+        }
+
+        .user {
+            @include absPosition(90px, 120px);
+
+            &:after {
+                transform: scaleY(-1) translateX(-50%);
+                @include absPosition(-5px, null, auto);
+            }
+        }
+
+        &:before {
+            border-left: 5px dotted #fff;
+            border-top: 5px dotted #fff;
+            border-top-left-radius: 100%;
+            content: '';
+            height: 75px;
+            width: 75px;
+            @include absPosition(55px, -45px);
+        }
+
+        &:after {
+            content: url(#{$fileDir}top/btn_omake_close.png);
+            display: block;
+            font-size: 0;
+        }
+
+        &.-active {
+            span {
+                display: block;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &.-display {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    &__fireworks {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.5s 2.5s;
+        @include absPosition(340px, 2275px);
+
+        a {
+            display: block;
+        }
+
+        &.-close:after {
+            content: url(#{$fileDir}top/btn_fireworks_slider_close.png);
+            font-size: 0;
+            @include absPosition(0, 0);
+        }
+
+        &.-display {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    &__arrow {
+        background-color: rgba(#fff, 0.75);
+        border-radius: 50%;
+        cursor: pointer;
+        height: 50px;
+        opacity: 0;
+        padding: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+        width: 50px;
+
+        &:before {
+            border-right: 3px solid #0091db;
+            border-top: 3px solid #0091db;
+            content: '';
+            padding: 6px;
+            transform: translateY(-50%) rotate(45deg);
+            @include absPosition(50%, 14px);
+        }
+
+        &.-prev {
+            @include absPosition(50%, 25px);
+            transform: translateY(-50%) scaleX(-1);
+        }
+
+        &.-next {
+            @include absPosition(50%, null, null, 25px);
+            transform: translateY(-50%);
+        }
+
+        &.-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}

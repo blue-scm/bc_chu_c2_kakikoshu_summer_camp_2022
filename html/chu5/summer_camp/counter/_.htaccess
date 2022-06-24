@@ -1,0 +1,7 @@
+# 本番では管理ページへのIPアクセス制限をかけてください
+<Files ~ "^(counter_qyfzgakn\.php)$">
+order deny,allow
+deny from all
+allow from 202.241.174.196
+allow from 119.243.97.232
+</Files>

@@ -1,0 +1,30 @@
+//------------------------------------------
+//  Mixin Font
+//------------------------------------------
+
+//REM Fontsize
+//ブラウザの標準はほぼ16pxなので、16として良い。
+//だいたいにおいて、引数ひとつで使用する。
+@mixin fontsize($size: 14, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+//MacOSのフォントレンダリング
+//背景の色によってアンチエイリアスのかかり具合を調節する
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+//TextOutline
+@mixin text-outline-bold( $color: #FFFFFF, $size: 1px) {
+  -webkit-text-stroke-width: $size;
+  -webkit-text-stroke-color: $color;
+  -webkit-text-fill-color: $color;
+}

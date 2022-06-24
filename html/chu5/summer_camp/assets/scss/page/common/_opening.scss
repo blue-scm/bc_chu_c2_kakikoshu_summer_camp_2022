@@ -1,0 +1,35 @@
+/* ==========================================================================
+    サマーキャンプ 共通 オープニング
+========================================================================== */
+
+.opening {
+    flex-basis: 1280px;
+    max-height: 1280px;
+
+    &__mov {
+        margin: 40px auto 0;
+        width: 782px;
+    }
+
+    &__txt {
+        margin-top: 20px;
+        text-align: center;
+        @include fontsize(15);
+    }
+
+    &__register {
+        background-color: #f2851e;
+        border-radius: 9999px;
+        box-shadow: 0 5px #79430f;
+        cursor: pointer;
+        display: block;
+        height: 44px;
+        margin: 10px auto 0;
+        padding: 0;
+        width: 298px;
+
+        img {
+            margin: auto;
+        }
+    }
+}

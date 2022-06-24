@@ -1,0 +1,56 @@
+/* ==========================================================================
+    サマーキャンプ 共通 モーダルウィンドウ
+========================================================================== */
+
+.modal {
+    font-weight: bold;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
+    @include absPosition(0, 0);
+    @include fontsize(24);
+
+    &__inner {
+        background: #e1f5fe url(#{$fileDir}common/bg_header.png) repeat-x left top;
+        display: flex;
+        height: 100%;
+        width: 300%;
+    }
+
+    &__ttl {
+        background: url(#{$fileDir}common/img_tent.png) no-repeat 30px center;
+        height: 122px;
+        position: relative;
+
+        img {
+            @include absPosition(null, 167px, 31.5px);
+        }
+    }
+
+    &__close {
+        background: url(#{$fileDir}common/ico_close.png) no-repeat left top / contain;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+        line-height: 1;
+        opacity: 0;
+        padding: 48px 0 0;
+        transition: all 0.5s;
+        width: 44px;
+        z-index: -1;
+        @include absPosition(31px, null, null, 24px);
+        @include fontsize(12);
+
+        &.-active {
+            opacity: 1;
+            z-index: $zLayer1;
+        }
+    }
+
+    &.-active {
+        opacity: 1;
+        z-index: $zLayer5;
+    }
+}

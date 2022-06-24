@@ -1,0 +1,31 @@
+/* ==========================================================================
+    サマーキャンプ 下層ページ コンテンツ
+========================================================================== */
+
+.lower {
+    background: url(#{$fileDir}common/bg_common.png) no-repeat left -18px bottom 12px / auto 110%;
+
+    &__box {
+        align-content: flex-start;
+        background-color: rgba(#fff, 0.9);
+        border-radius: 30px;
+        box-shadow: 10px 10px 16px rgba(#000, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        height: 580px;
+        justify-content: center;
+        margin: 35px;
+        overflow: hidden;
+        position: relative;
+        width: 950px;
+
+        &:before {
+            border: 8px solid #0057a1;
+            border-radius: 30px;
+            content: '';
+            height: 100%;
+            width: 100%;
+            @include absPosition(0, 0);
+        }
+    }
+}

@@ -1,0 +1,142 @@
+/* ==========================================================================
+    サマーキャンプ 下層ページ ナビゲーション
+========================================================================== */
+
+.lower__nav {
+    border-bottom: 12px solid #f2851e;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    text-align: center;
+    width: 1020px;
+    @include absPosition(null, 0, 0);
+
+    a {
+        display: block;
+        height: 100%;
+    }
+
+    &__top {
+        flex-basis: 68px;
+        max-width: 68px;
+    }
+
+    &__tab {
+        background-color: #e6e6e6;
+        border-radius: 12px 12px 0 0;
+        color: #ccc;
+        flex-basis: 98px;
+        line-height: 1;
+        max-width: 98px;
+        position: relative;
+
+        a:after {
+            background: url(#{$fileDir}common/ico_already.png) no-repeat left top / contain;
+            content: '';
+            height: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(3);
+            transition: all 0.5s;
+            width: 24px;
+            @include absPosition(-10px, 0);
+        }
+
+        em {
+            display: block;
+            font-family: urw-din-condensed, sans-serif;
+            font-style: normal;
+            padding-top: 8px;
+            @include fontsize(23);
+        }
+
+        span {
+            font-family: gill-sans-nova, sans-serif;
+            margin-left: 0.1em;
+            @include fontsize(30);
+        }
+
+        time {
+            display: block;
+            padding-top: 6px;
+            @include fontsize(14);
+        }
+
+        .user {
+            height: 38px;
+            margin: 0;
+            transform: translateX(-50%);
+            width: 38px;
+            @include absPosition(-30px, 50%);
+
+            img {
+                max-width: 130%;
+                transform: translate(-50%, -50%);
+                @include absPosition(50%, 50%);
+            }
+
+            .avatar {
+                background-color: #f2f2f2;
+                border: 2px solid #fff;
+                border-radius: 3px;
+                box-shadow: 0 0 2px rgba(#000, 0.3);
+                display: block;
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+                position: relative;
+            }
+
+            .name {
+                display: none;
+            }
+
+            &:after {
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #fff;
+                content: '';
+                transform: translateX(-50%);
+                @include absPosition(null, 50%, -5px);
+            }
+        }
+
+        &.-active {
+            background-color: #fff;
+
+            em {
+                color: #f2851e;
+            }
+
+            time {
+                color: #4d4d4d;
+            }
+        }
+
+        &.-current {
+            background-color: #f2851e;
+
+            em,
+            time {
+                color: #fff;
+            }
+        }
+
+        &.-already a:after {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    &__fireworks {
+        flex-basis: 150px;
+        max-width: 150px;
+        position: relative;
+
+        &.-close:after {
+            content: url(#{$fileDir}lower/tab_fireworks_close.png);
+            font-size: 0;
+            @include absPosition(0, 0);
+        }
+    }
+}
