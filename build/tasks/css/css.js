@@ -1,49 +1,30 @@
-import gulp from 'gulp';
-import sass from 'gulp-sass';
-import pleeease from 'gulp-pleeease';
-import sassGlob from 'gulp-sass-glob';
-import plumber from 'gulp-plumber';
-import csscomb from 'gulp-csscomb';
-import changedInPlace from 'gulp-changed-in-place';
-import CONFIG from '../../config';
+import CONFIG from "../../config.js";
 
-//編集中のSCSSを監視して、CSSCOMBする
+import { src, dest } from "gulp";
+import plumber from "gulp-plumber";
+import notify from "gulp-notify";
 
-gulp.task('csscomb', ()=>{
-    return gulp.src(CONFIG.PATH.scss + '**/*.scss')
-        .pipe(plumber())
-        .pipe(csscomb())
-        .pipe(changedInPlace({firstPass: true}))
-        .pipe(gulp.dest(CONFIG.PATH.tmp_scss));
-});
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
 
-gulp.task('moveCombedCss', function() {
-    return gulp.src(CONFIG.PATH.tmp_scss + '**/*.scss')
-        .pipe(changedInPlace({firstPass: true}))
-        .pipe(gulp.dest(CONFIG.PATH.scss));
-});
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
 
+//import pleeease from "gulp-pleeease";
+import sassGlob from "gulp-sass-glob-use-forward";
 
-gulp.task('compileSCSS', ()=>{
-    return gulp.src(CONFIG.PATH.tmp_scss + '**/*.scss')
-        .pipe(plumber())
+export function compileSass(cb) {
+    const sass = gulpSass(dartSass);
+
+    src(CONFIG.PATH.scss + "**/*.scss")
+        .pipe(
+            plumber({
+                errorHandler: notify.onError("Error: <%= error.message %>"),
+            })
+        )
         .pipe(sassGlob())
-        .pipe(sass({outputStyle : 'expanded'}))
-        .pipe(pleeease({
-            minifier:false,
-            autoprefixer:CONFIG.OPTION.autoprefixer
-        }))
-        .pipe(gulp.dest(CONFIG.PATH.css));
-});
-
-gulp.task('compileSCSS_NOCOMB', ()=>{
-    return gulp.src(CONFIG.PATH.scss + '**/*.scss')
-        .pipe(plumber())
-        .pipe(sassGlob())
-        .pipe(sass({outputStyle : 'expanded'}))
-        .pipe(pleeease({
-            minifier:false,
-            autoprefixer:CONFIG.OPTION.autoprefixer
-        }))
-        .pipe(gulp.dest(CONFIG.PATH.css));
-});
+        .pipe(sass({ includePaths: ["../../node_modules", CONFIG.PATH.scss], outputStyle: "expanded" }))
+        .pipe(postcss([autoprefixer()]))
+        .pipe(dest(CONFIG.PATH.css));
+    cb();
+}

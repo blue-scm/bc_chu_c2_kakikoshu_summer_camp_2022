@@ -1,28 +1,28 @@
 // config
-var PROJECT_ROOT = '../html/chu5/summer_camp/';
+const PROJECT_ROOT = "../html";
 
-//event LP
-//var PROJECT_ROOT = '../html/event/preview/';
-
-var BUILD = './';
-var device = '';
-
-var CONFIG = {
+const CONFIG = {
     PATH: {
         root: PROJECT_ROOT,
-        scss: PROJECT_ROOT + device + '/assets/scss/',
-        css: PROJECT_ROOT + device + '/assets/css/',
-        js: PROJECT_ROOT + device + '/assets/js/',
-        es6: PROJECT_ROOT + device + '/assets/es6/',
+        ejs: PROJECT_ROOT + "/assets/ejs/",
+        ejs_json: PROJECT_ROOT + "/assets/ejs/var.json",
+        scss: PROJECT_ROOT + "/assets/scss/",
+        css: PROJECT_ROOT + "/assets/css/",
+        js: PROJECT_ROOT + "/assets/js/",
+        es6: PROJECT_ROOT + "/assets/es6/",
+        ts: PROJECT_ROOT + "/assets/ts/",
+        img: PROJECT_ROOT + "/assets/img/",
     },
     OPTION: {
-        proxy: "localhost:8099",
-        csscomb: false,
-        webpack: true,
-        autoprefixer: {
-            "browsers": ["last 2 versions", "ie >= 9", "Android >= 4", "ios_saf >= 8"]
-        },
-    }
+        proxy: "localhost:8552",
+        es6: true,
+        ts: false,
+        ejs: true,
+    },
+    COMPRESS_RATE: {
+        png: [0.7, 0.8],
+        gif: 3,
+    },
 };
 
-module.exports = CONFIG;
+export default CONFIG;

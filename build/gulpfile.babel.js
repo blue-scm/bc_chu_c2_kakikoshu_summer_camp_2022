@@ -1,31 +1,30 @@
-import gulp from 'gulp';
-import CONFIG from './config';
-import requireDir from 'require-dir';
+import CONFIG from "./config.js";
 
-requireDir('./tasks', {recurse: true});
+import { watch, series, parallel } from "gulp";
 
-//コンパイルが必要なもののwatch
-gulp.task('compileWatch', ()=> {
+//tasks
+import { compileSass } from "./tasks/css/css.js";
+import { compileES6 } from "./tasks/js/es6.js";
+import { compileTS } from "./tasks/js/ts.js";
+import { compileEjs } from "./tasks/html/ejs.js";
+import { compressImage } from "./tasks/img/img.js";
+import { browserSync } from "./tasks/watch/browsersync.js";
 
-    //combオプションがあればリアルタイムCOMBコンパイル
-    if (CONFIG.OPTION.csscomb) {
-        gulp.watch(CONFIG.PATH.scss + '**/*.scss', ['csscomb']);
-        gulp.watch(CONFIG.PATH.tmp_scss + '**/*.scss', ['moveCombedCss']);
-        gulp.watch(CONFIG.PATH.tmp_scss + '**/*.scss', ['compileSCSS']);
-    } else {
-        gulp.watch(CONFIG.PATH.scss + '**/*.scss', ['compileSCSS_NOCOMB']);
-    }
+const compileWatch = (cb) => {
+    //Sass Task
+    watch([CONFIG.PATH.scss + "**/*.scss"], compileSass);
 
+    //ES6 Task (webpack)
+    CONFIG.OPTION.es6 && watch([CONFIG.PATH.es6 + "**/*.es6"], compileES6);
 
+    //TypeScript Task (webpack)
+    CONFIG.OPTION.ts && watch([CONFIG.PATH.ts + "**/*.ts"], compileTS);
 
-//webpackオプションがあればコンパイル
-if (CONFIG.OPTION.webpack) {
-    gulp.watch([CONFIG.PATH.es6 + '**/*.es6'], ['webpack']);
-}
-});
+    //Ejs Task
+    CONFIG.OPTION.ejs && watch([CONFIG.PATH.ejs + "**/*.ejs"], compileEjs);
 
+    cb();
+};
 
-gulp.task('default', [
-    'compileWatch',
-    'browserSync'
-]);
+module.exports.default = series(parallel(compileWatch, browserSync));
+module.exports.compressImage = compressImage;

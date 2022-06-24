@@ -6,46 +6,22 @@ const webpack = require("webpack");
 module.exports = {
     mode: "production",
     entry: {
-        top: CONFIG.PATH.es6 + "top.es6",
-        lower: CONFIG.PATH.es6 + "lower.es6",
+        main_ts: CONFIG.PATH.ts + "main.ts",
     },
-
     output: {
+        //outputは基本、変更しなくてOK
         filename: "[name].js",
     },
-
-    // ES5(IE11等)向けの指定
-    target: ["web", "es5"],
-
     module: {
         rules: [
-            //babel
             {
-                test: [/\.js$/, /\.es6$/],
-                use: [
-                    {
-                        loader: "babel-loader",
-                        options: {
-                            presets: [
-                                [
-                                    "@babel/preset-env",
-                                    /* {
-                                        targets: {
-                                            ie: 11,
-                                        },
-                                        modules: false,
-                                        useBuiltIns: "usage",
-                                        corejs: 3,
-                                    }, */
-                                ],
-                            ],
-                        },
-                    },
-                ],
-                //core-modules,swiper関連などをexcludeします
-                exclude: /node_modules\/(?!(core-module|dom7|ssr-window|swiper|array-shuffle)\/).*/,
+                test: [/\.js$/, /\.ts$/],
+                exclude: /node_modules/,
+                loader: "ts-loader",
+                options: {
+                    configFile: path.resolve(__dirname, "tsconfig.json"),
+                },
             },
-
             //CSS in JS
             {
                 test: /\.s?css$/i,
@@ -60,9 +36,8 @@ module.exports = {
             },
         ],
     },
-
     resolve: {
-        extensions: [".es6", ".js"],
+        extensions: [".ts", ".tsx", ".js"],
         modules: [path.resolve(__dirname, "./node_modules"), "node_modules"],
     },
 

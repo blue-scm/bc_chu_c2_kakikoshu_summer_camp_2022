@@ -1,25 +1,25 @@
-import gulp from 'gulp';
-import browserSync from 'browser-sync'
-import CONFIG from '../../config';
+import CONFIG from "../../config.js";
 
+import { watch } from "gulp";
+import bs from "browser-sync";
 
-gulp.task('browserSync', ()=> {
-    
-    if(CONFIG.OPTION.proxy){
-        browserSync.init({
-            proxy: CONFIG.OPTION.proxy
+export function browserSync(cb) {
+    if (CONFIG.OPTION.proxy) {
+        bs.init({
+            proxy: CONFIG.OPTION.proxy,
         });
     } else {
-        browserSync.init({
+        bs.init({
             server: {
-                baseDir: "../html"
-            }
+                baseDir: "../html",
+            },
         });
     }
 
-    // srcフォルダ以下のファイルを監視
-    gulp.watch([CONFIG.PATH.root + '/**'], function () {
-        browserSync.reload();
+    //ルート以下のファイルを監視
+    watch(CONFIG.PATH.root + "/**/*").on("change", () => {
+        bs.reload();
     });
 
-});
+    cb();
+}
