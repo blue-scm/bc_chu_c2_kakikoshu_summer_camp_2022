@@ -1,0 +1,10 @@
+<div id="footer">
+    <div class="footer_wrapper">
+        <div class="footer_img">
+            <a href="https://www.benesse.co.jp/"><img src="./footer_files/footer_logo.png" srcset="/common/headfoot2019/img/footer_logo.png 1x, /common/headfoot2019/img/footer_logo@2x.png 2x" alt=""></a>
+        </div>
+        <div class="footer_copy">
+            <p><small>&copy; Benesse Corporation. All rights reserved.</small></p>
+        </div>
+    </div>
+</div>

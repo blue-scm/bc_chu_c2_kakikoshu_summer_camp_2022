@@ -1,0 +1,20 @@
+//------------------------------------------
+//  Mixin Position
+//------------------------------------------
+
+//positions
+@mixin absPosition($top: null, $left: null, $bottom: null, $right: null) {
+  position: absolute;
+  @if $top { top: $top; }
+  @if $left { left: $left; }
+  @if $bottom { bottom: $bottom; }
+  @if $right { right: $right; }
+}
+
+@mixin fxdPosition($top: null, $left: null, $bottom: null, $right: null) {
+  position: fixed;
+  @if $top { top: $top; }
+  @if $left { left: $left; }
+  @if $bottom { bottom: $bottom; }
+  @if $right { right: $right; }
+}

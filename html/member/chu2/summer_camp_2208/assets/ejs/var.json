@@ -1,0 +1,17 @@
+{
+    "css": "./assets/css/",
+    "img": "./assets/img/",
+    "js": "./assets/js/",
+    "schedule":[
+        { "month": 7, "date": 21, "day": "木" },
+        { "month": 7, "date": 22, "day": "金" },
+        { "month": 7, "date": 23, "day": "土" },
+        { "month": 7, "date": 24, "day": "日" },
+        { "month": 7, "date": 25, "day": "月" },
+        { "month": 7, "date": 26, "day": "火" },
+        { "month": 7, "date": 27, "day": "水" },
+        { "month": 7, "date": 28, "day": "木" },
+        { "month": 7, "date": 29, "day": "金" },
+        { "month": 7, "date": 30, "day": "土" }
+    ]
+}

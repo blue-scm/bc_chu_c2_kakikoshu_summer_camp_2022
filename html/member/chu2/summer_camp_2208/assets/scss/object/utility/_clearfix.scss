@@ -1,0 +1,7 @@
+@use "global"as *;
+
+.u-clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+}

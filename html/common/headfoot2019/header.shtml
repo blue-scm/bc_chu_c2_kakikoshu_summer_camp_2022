@@ -1,0 +1,7 @@
+<div id="header">
+    <div class="header_wrapper">
+        <a href="http://www.zemi.jp/">
+            <img src="./header_files/header_logo.png" srcset="/common/headfoot2019/img/header_logo.png 1x, /common/headfoot2019/img/header_logo@2x.png 2x" alt="">
+        </a>
+    </div>
+</div>

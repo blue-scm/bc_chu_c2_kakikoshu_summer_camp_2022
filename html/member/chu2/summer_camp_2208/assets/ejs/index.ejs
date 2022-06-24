@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <%- include('./common/_meta', { page: 'top' }) %>
+
+</head>
+
+<body>
+
+    <header><!-- ベネッセヘッダー領域 --></header>
+
+    <main id="main" class="l-main">
+
+        <%- include('./top/_header') %>
+        <%- include('./top/_slider') %>
+        <%- include('./top/_footer') %>
+        <%- include('./top/_talkroom') %>
+
+        <%- include('./top/_m-welcome') %>
+        <%- include('./top/_m-schedule') %>
+        <%- include('./top/_m-online') %>
+        <%- include('./top/_m-complete') %>
+
+    </main><!-- /.l-main -->
+
+    <footer><!-- ベネッセフッター領域 --></footer>
+
+    <%- include('./common/_js', { page: 'top' }) %>
+
+</body>
+
+</html>

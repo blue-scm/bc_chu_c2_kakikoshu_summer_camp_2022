@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+body {
+  font-family: "メイリオ",Meiryo,"游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  color: #333;
+}
+
+.pc {
+  display: block;
+} /*  769px以上  */
+.tab {
+  display: none;
+} /*  768px以下  */
+.sp {
+  display: none;
+} /*  767px以下  */
+.ssp {
+  display: none;
+} /*  425px以下  */
+
+#header img,
+#footer img{
+  display: block;
+  max-width: 100%;
+}
+/*-------------------------------------
+-----------------header---------------
+-------------------------------------*/
+#header{
+  width: 100%;
+  box-shadow: 1px 0px 15px 0px #c1baba;
+  position: relative;
+  z-index: 1;
+}
+.header_wrapper{
+  width: 192px;
+  height: 50px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 15px 0;
+}
+.header-warapper a{
+  width: 100%;
+  height: 50px;
+}
+.header-warapper a img{
+  display: block;
+}
+/*-------------------------------------
+-----------------footer---------------
+-------------------------------------*/
+#footer{
+  width: 100%;
+  border-top: 1px solid #c1baba;
+  height: 50px;
+}
+.footer_wrapper{
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 1.5em 0;
+}
+.footer_img{
+  float: left;
+  width: 105px;
+  margin: 0 2em;
+}
+.footer_img a{
+  width: 100%;
+  height: 25px;
+}
+.footer_copy{ 
+float: left; 
+box-sizing: border-box; 
+margin: 0 /* 追記 */ 
+padding: 6px 0; /* 天地センターに見せるために更に修正 */ 
+} 
+.footer_copy p{
+  font-size: 12px;
+  color: #808080;
+}
+/*-------------------------------------
+------------レスポンシブ記述---------------
+-------------------------------------*/
+@media screen and (max-width: 767px) {
+	.footer_img{
+		float: none;
+		margin: 0 auto; 
+	}
+	.footer_copy{
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding: 1em 0;
+	}
+
+}

@@ -1,0 +1,173 @@
+@charset "UTF-8";
+/* ==========================================================================
+    comment
+    ※案件によってスタイルを上書きしてください
+========================================================================== */
+.c-talkroom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  padding: 15px 20px;
+  background: #333333;
+  box-sizing: border-box;
+}
+
+.c-talkroom__ttl {
+  position: relative;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 0 5px;
+}
+
+.c-talkroom__body + .c-talkroom__ttl {
+  margin-top: 20px;
+}
+
+.c-talkroom__body {
+  position: relative;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.c-talkroom__body.-editor {
+  height: 130px;
+}
+
+.c-talkroom__body.-only {
+  height: 520px;
+}
+
+.c-talkroom__submit {
+  display: block;
+  margin: 10px auto 10px;
+  position: relative;
+  text-align: center;
+}
+
+.c-talkroom__submit img {
+  position: relative;
+  z-index: 1;
+  vertical-align: top;
+}
+
+.c-talkroom__submit:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #206b67;
+  border-radius: 40px;
+}
+
+.c-talkroom__submit:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00ffff;
+  border-radius: 40px;
+}
+
+.c-talkroom__notice {
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 12px;
+  color: #fff;
+}
+
+.c-talkroom__list {
+  margin: 0;
+  padding: 0;
+}
+
+.c-talkroom__list__item {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.c-talkroom__list__item__icon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #e6e6e6;
+  float: left;
+  margin: 0 7px 0 0;
+  overflow: hidden;
+}
+
+.c-talkroom__list__item__icon img {
+  max-width: initial;
+  max-width: auto;
+  width: 200%;
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.c-talkroom__list__item__icon img.-no_scale {
+  width: 100%;
+  top: 0;
+}
+
+.c-talkroom__list__item__ttl {
+  font-weight: normal;
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+}
+
+.c-talkroom__list__item__body {
+  font-size: 13px;
+  margin: 0;
+}
+
+.c-talkroom__list__item__author {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.c-talkroom__list__item__date {
+  font-size: 10px;
+  color: #ccc;
+  margin: 2px 0 0 0;
+}
+
+.c-talkroom__pagenate {
+  border-top: 1px solid #eee;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 13px;
+  font-weight: bold;
+  list-style: none;
+}
+
+.c-talkroom__pagenate__item {
+  cursor: pointer;
+}
+
+.c-talkroom__pagenate__item.-disable {
+  pointer-events: none;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  visibility: hidden;
+}

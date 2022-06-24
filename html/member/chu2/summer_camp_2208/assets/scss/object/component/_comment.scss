@@ -1,0 +1,17 @@
+@use "global"as *;
+
+.c-comment__pagenate {
+    border-top: 1px solid #eee;
+    display: flex;
+    font-size: 13px;
+    font-weight: bold;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+//非表示状態
+.c-comment__pagenate__item.-disable {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}

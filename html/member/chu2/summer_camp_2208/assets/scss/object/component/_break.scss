@@ -1,0 +1,17 @@
+@use "global"as *;
+
+.c-br_nrw {
+    display: none !important;
+
+    @include MQ_NARROW {
+        display: block !important;
+    }
+}
+
+.c-br_wide {
+    display: none !important;
+
+    @include MQ_WIDE {
+        display: block !important;
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>好きなページに飛べる検証用のページ</title>
+	</head>
+
+	<body>
+		<form action="" id="myform" style="margin:2.5vw">
+			<input type="text" id= "myinput" style="font-size:30px">
+			<button style="font-size:30px">GO</button>
+		</form>
+
+		<script>
+			const myform = document.querySelector('#myform');
+			console.log(myform);
+			myform.addEventListener('submit',function(e){
+				e.preventDefault();
+				const url = document.querySelector('#myinput').value;
+				location.href = url;
+			});
+		</script>
+
+	</body>
+
+</html>

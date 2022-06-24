@@ -1,0 +1,24 @@
+//----------------------------------
+//  Respond unit
+// ----------------------------------
+
+@mixin MQ_NARROW {
+  //（768px）以下の場合
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin MQ_WIDE {
+  //（769px）以上の場合
+  @media (min-width:769px) {
+    @content;
+  }
+}
+
+@mixin MQ_GNAV {
+  //グロナビ用media query
+  @media (max-width:1280px) {
+    @content;
+  }
+}
