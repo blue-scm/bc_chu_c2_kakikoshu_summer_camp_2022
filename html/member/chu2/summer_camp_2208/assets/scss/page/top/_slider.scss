@@ -1,0 +1,125 @@
+@use "global"as *;
+
+.slider {
+    height: 100%;
+    position: relative;
+    width: calc(100% - 260px);
+}
+
+.slider__bird {
+    @include absPosition(60px, 690px);
+    animation: slider__bird1 2s infinite;
+
+    @keyframes slider__bird1 {
+        50% {
+            transform: translateY(10px);
+        }
+    }
+
+    &:before {
+        animation: slider__bird2 0.075s steps(4) infinite alternate;
+        background: url(#{$img}top/slider/ph_bird.png) no-repeat;
+        content: '';
+        display: block;
+        filter: drop-shadow(0 0 5px rgba(#000, 0.2));
+        height: 34px;
+        overflow: hidden;
+        width: 90px;
+
+        @keyframes slider__bird2 {
+            100% {
+                background-position-x: -360px;
+            }
+        }
+    }
+
+    &.-left:before {
+        margin: 0 0 -40px 84px;
+    }
+
+    &.-right:before {
+        margin: 0 0 -40px 64px;
+        transform: scaleX(-1);
+    }
+}
+
+.slider__inner {
+    background: url(#{$img}top/slider/bg_slider.png) no-repeat;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 3684px;
+}
+
+.slider__day {
+    flex-shrink: 0;
+    width: 234px;
+
+    a {
+        background-color: #f27e11;
+        border: 4px solid #fff;
+        border-radius: 100vh;
+        display: block;
+        filter: drop-shadow(0 0 10px rgba(#000, 0.3));
+        line-height: 50px;
+        padding-left: 60px;
+        position: relative;
+    }
+
+    img {
+        @include absPosition(50%, 0);
+        transform: translate(-50%, -50%);
+        width: 96px;
+    }
+
+    time {
+        @include fontsize(19);
+        color: #fff;
+        font-weight: 900;
+    }
+
+    em {
+        @include fontsize(30);
+        font-style: normal;
+    }
+
+    &:nth-child(2n) {
+        margin-top: -200px;
+    }
+
+    &.-complete {}
+}
+
+.slider__marktest {}
+
+.slider__news {}
+
+.slider__arrow {
+    @include absPosition($top: 50%);
+    background-color: rgba(#fff, 0.75);
+    border-radius: 50%;
+    font-size: 0;
+    height: 50px;
+    transform: translateY(-50%);
+    width: 50px;
+
+    &:before {
+        border-right: 3px solid #0091db;
+        border-top: 3px solid #0091db;
+        content: '';
+        display: inline-block;
+        height: 15px;
+        margin-right: 8px;
+        transform: rotate(45deg);
+        width: 15px;
+    }
+
+    &.-prev {
+        left: 20px;
+        transform: scaleX(-1);
+    }
+
+    &.-next {
+        right: 20px;
+    }
+}

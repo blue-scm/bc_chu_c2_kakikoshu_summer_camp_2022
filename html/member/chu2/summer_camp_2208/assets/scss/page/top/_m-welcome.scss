@@ -2,7 +2,7 @@
 
 .m-welcome {
     @include absPosition(0, 0);
-    background-image: url(#{$img}top/m-welcome/bg_welcome.jpg);
+    background: url(#{$img}top/m-welcome/bg_welcome.jpg) no-repeat;
     height: 100%;
     opacity: 0;
     pointer-events: none;
