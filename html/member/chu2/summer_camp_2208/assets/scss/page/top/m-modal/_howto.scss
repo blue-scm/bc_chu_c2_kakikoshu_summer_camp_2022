@@ -1,0 +1,22 @@
+@use "global"as *;
+
+.howto {
+    width: 1280px;
+}
+
+.howto__ttl {
+    align-items: center;
+    background: url(#{$img}top/m-modal/bg_tent.svg) no-repeat 26px center / 124px auto;
+    display: flex;
+    height: 122px;
+    padding-left: 162px;
+}
+
+.howto__txt img {
+    height: 54px;
+    margin: 24px auto 0;
+}
+
+.howto__ph img {
+    margin: 36px auto 0;
+}

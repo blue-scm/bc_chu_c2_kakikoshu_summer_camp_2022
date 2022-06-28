@@ -1,0 +1,107 @@
+.m-welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../img/top/m-welcome/bg_welcome.jpg);
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  transform: scale(1.1);
+  transition: opacity 0.5s, transform 0.5s;
+  width: 100%;
+  z-index: 5000;
+}
+.m-welcome.-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.m-welcome__cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 667px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(2);
+  transition: opacity 1s 1s, transform 1s 1s;
+  width: 668px;
+}
+.m-welcome__cont img {
+  margin: 90px auto 0;
+}
+.m-welcome__cont button {
+  font-size: 1.9375rem;
+  background-color: #f27e11;
+  border-radius: 100vh;
+  box-shadow: 0 8px #79430f;
+  color: #fff;
+  font-weight: 900;
+  line-height: calc(64px - 0.1em);
+  margin: 40px auto 0;
+  padding-bottom: 0.1em;
+  width: 430px;
+}
+.m-welcome__cont:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: url(../img/top/m-welcome/bg_circle.png);
+  font-size: 0;
+  transition: transform 1s 1s;
+  z-index: -1;
+}
+.-show .m-welcome__cont {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.-show .m-welcome__cont:before {
+  transform: rotate(45deg);
+}
+
+.m-welcome__nobu {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.5s 2s, transform 0.5s 2s;
+}
+.-show .m-welcome__nobu {
+  opacity: 1;
+  transform: none;
+}
+
+.m-welcome__name {
+  position: absolute;
+  bottom: 20px;
+  right: 65px;
+  font-size: 1.0625rem;
+  background-color: #fff;
+  border-radius: 100vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #0057a1;
+  font-weight: 900;
+  line-height: calc(40px - 0.3em);
+  opacity: 0;
+  padding-top: 0.3em;
+  transition: opacity 0.5s 2s;
+  width: 194px;
+}
+.m-welcome__name span {
+  position: relative;
+}
+.m-welcome__name span:before {
+  position: absolute;
+  top: -0.4em;
+  left: 50%;
+  content: attr(data-ruby);
+  font-size: 0.4em;
+  line-height: 1;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.-show .m-welcome__name {
+  opacity: 1;
+}

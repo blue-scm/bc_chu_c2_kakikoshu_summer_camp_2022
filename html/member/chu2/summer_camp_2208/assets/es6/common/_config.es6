@@ -1,11 +1,10 @@
 export const Config = {
 
-    // 更新
-    UPDATE: {
-        TIME: '', // 共通の更新時間
+    LOCAL_STORAGE: {
+        DATA: {},
+        KEY: 'member/chu2/summer_camp_2208/index',
     },
 
-    // パラメータの使用
-    USE_PARAM: true,
+    USE_PARAM: true, // パラメータの使用
 
 }

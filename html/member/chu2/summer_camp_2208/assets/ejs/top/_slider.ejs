@@ -1,8 +1,8 @@
-<div id="js-slider" class="slider">
+<div id="slider" class="slider">
 
     <nav class="slider__inner">
 
-        <% schedule.forEach((val, i) => { %>
+        <% slider_day.forEach((val, i) => { %>
             <p class="slider__day">
                 <a href="./day<%= i + 1 %>.html">
                     <img src="<%= img %>common/ico_day<%= i + 1 %>.svg" alt="DAY<%= i + 1 %>">
@@ -39,12 +39,12 @@
     <button class="slider__arrow -prev">←</button>
     <button class="slider__arrow -next">→</button>
 
-    <div class="slider__guide">
-        <p class="slider__txt">未来の日付は選択できないよ！<br>
+    <div class="m-guide js-modal">
+        <p class="m-guide__txt">未来の日付は選択できないよ！<br>
             予定よりも早く取り組みたいときは、カレンダーを再設定しよう。<br>
-            <button class="js-modal-open" data-id="schedule1">カレンダーを設定する</button>
+            <button class="js-modal__open" data-id="modal" data-scene="schedule">カレンダーを設定する</button>
         </p>
-        <button class="slider__close">✕</button>
-    </div>
+        <button class="m-guide__close js-modal__close">✕</button>
+    </div><!-- /.m-guide -->
 
 </div><!-- /.slider -->

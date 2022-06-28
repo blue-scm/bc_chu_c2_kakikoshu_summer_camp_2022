@@ -1,0 +1,312 @@
+@use "global"as *;
+
+.schedule {
+    position: relative;
+    width: 1280px;
+}
+
+.schedule__ttl {
+    align-items: center;
+    background: url(#{$img}top/m-modal/bg_tent.svg) no-repeat 26px center / 124px auto;
+    display: flex;
+    height: 122px;
+    padding-left: 162px;
+
+    img {
+        height: 34px;
+    }
+}
+
+.schedule__desc {
+    margin: 50px 0 0 56px;
+    width: 452px;
+
+    ul {
+        @include fontsize(11);
+        line-height: 1.4;
+        margin-top: 10px
+    }
+
+    div {
+        @include absPosition($bottom: 0, $left: 364px);
+        z-index: 1;
+    }
+}
+
+.schedule__txt {
+    @include fontsize(20);
+    font-weight: bold;
+
+    strong {
+        color: #0091db;
+        font-weight: 900;
+    }
+}
+
+.schedule__speech {
+    @include fontsize(14);
+    background-color: #fff;
+    border-radius: 26px;
+    color: #4d4d4d;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 20px 24px;
+    position: relative;
+    width: 340px;
+
+    strong {
+        font-weight: 900;
+
+        &.-blue {
+            color: #0b4a6b;
+        }
+
+        &.-green {
+            color: #00695c;
+        }
+
+        &.-red {
+            color: #ef3131;
+        }
+    }
+
+    &:before {
+        @include absPosition(20px, calc(100% - 2px));
+        content: url(#{$img}top/m-modal/bg_speech.svg);
+        font-size: 0;
+        width: 30px;
+    }
+}
+
+.schedule__calendar {
+    @include absPosition($bottom: 0, $right: 56px);
+    width: 680px;
+}
+
+.schedule__tab {
+    display: flex;
+    height: 46px;
+    justify-content: center;
+
+    button {
+        align-items: center;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        justify-content: center;
+        margin: 0 4px;
+        width: 300px;
+
+        &.-recommend {
+            background-color: #0b4a6b;
+        }
+
+        &.-setting {
+            background-color: #00695c;
+        }
+    }
+
+    img {
+        height: 18px;
+        transition: 0.2s;
+    }
+
+    [data-tab='0'] & button.-recommend,
+    [data-tab='1'] & button.-setting {
+        position: relative;
+        z-index: 1;
+
+        img {
+            height: 26px;
+        }
+    }
+}
+
+.schedule__cont {
+    box-shadow: 0 0 10px rgba(#000, 0.3);
+    height: 630px;
+    position: relative;
+
+    section {
+        @include absPosition(0, 0);
+        border-radius: 10px 10px 0 0;
+        height: 100%;
+        opacity: 0;
+        padding: 24px 30px 0;
+        pointer-events: none;
+        transition: 0.2s;
+        width: 100%;
+
+        &.-recommend {
+            background-color: #0b4a6b;
+        }
+
+        &.-setting {
+            background-color: #00695c;
+        }
+    }
+
+    [data-tab='0'] & section.-recommend,
+    [data-tab='1'] & section.-setting {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.schedule__subttl {
+    text-align: center;
+
+    span {
+        @include fontsize(24);
+        color: #facca0;
+        display: inline-block;
+        font-weight: bold;
+        line-height: 34px;
+        padding: 0 20px;
+        position: relative;
+
+        &:before,
+        &:after {
+            border: 1px solid #facca0;
+            content: '';
+            height: 100%;
+            width: 10px;
+        }
+
+        &:before {
+            @include absPosition($top: 0, $left: 0);
+            border-right: none;
+        }
+
+        &:after {
+            @include absPosition($top: 0, $right: 0);
+            border-left: none;
+        }
+    }
+}
+
+.schedule__toggle {
+    @include absPosition($top: 24px, $right: 30px);
+    @include fontsize(11);
+    border: 1px solid #fff;
+    border-radius: 100vh;
+    color: #fff;
+    font-weight: 500;
+    height: 34px;
+    line-height: 1.2;
+    padding: 0 16px;
+    text-align: left;
+    width: 152px;
+
+    &:after {
+        @include absPosition($top: 50%, $right: 12px);
+        border-right: 1px solid #fff;
+        border-top: 1px solid #fff;
+        content: '';
+        height: 6px;
+        transform: translateY(-50%) rotate(45deg);
+        width: 6px;
+    }
+
+    [data-month='7'] &:before {
+        content: '8月から取り組みたい\Aキミはこちら！';
+        white-space: pre;
+    }
+
+    [data-month='8'] &:before {
+        content: '7月から取り組みたい\Aキミはこちら！';
+        white-space: pre;
+    }
+}
+
+.schedule__table {
+    align-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    height: 457px;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+
+    button {
+        background-color: #fff;
+        height: calc((100% - 27px) / 6);
+        margin-top: 2px;
+        position: relative;
+        width: calc((100% - 12px) / 7);
+
+        &:not([data-day='']) {
+            background-color: #facca0;
+
+            &:after {
+                @include absPosition($top: 5px, $left: 0, $right: 0);
+                font-size: 0;
+                margin: auto;
+                width: 50px;
+                z-index: 1;
+            }
+        }
+
+        @for $i from 1 through 10 {
+            &[data-day='#{$i}']:after {
+                content: url(#{$img}common/ico_day#{$i}.svg);
+            }
+        }
+    }
+
+    p {
+        @include fontsize(11);
+        background-color: #e1e1e1;
+        height: calc((100% - 27px) / 6);
+        line-height: 1.5;
+        margin-top: 2px;
+        padding: 6px 10px;
+        width: calc(100% - (100% - 12px) / 7 - 2px);
+
+    }
+
+    &:after {
+        @include absPosition(0, 0);
+        content: url(#{$img}top/m-modal/bg_calendar.svg);
+        pointer-events: none;
+        width: 100%;
+    }
+
+    [data-month='7'] & p span {
+        display: none;
+    }
+}
+
+.schedule__btn {
+    display: flex;
+    height: 44px;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+        border-radius: 100vh;
+        color: #fff;
+        margin: 0 4px;
+        opacity: 0.5;
+        pointer-events: none;
+        transition: 0.2s;
+        width: 200px;
+
+        &.-back {
+            @include fontsize(15);
+            border: 1px solid #fff;
+            font-weight: 500;
+        }
+
+        &.-decision {
+            @include fontsize(27);
+            background-color: #e03935;
+            box-shadow: 0 5px #971818;
+            font-weight: 900;
+        }
+
+        &.-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}

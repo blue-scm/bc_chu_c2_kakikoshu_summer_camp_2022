@@ -1,5 +1,5 @@
 // config
-const PROJECT_ROOT = "../html";
+const PROJECT_ROOT = "../html/member/chu2/summer_camp_2208";
 
 const CONFIG = {
     PATH: {

@@ -1,0 +1,82 @@
+<section id="schedule" class="schedule">
+
+    <h5 class="schedule__ttl">
+        <img src="<%= img %>top/m-modal/ttl_schedule.svg" alt="日程を登録しよう!">
+    </h5>
+
+    <div class="schedule__desc">
+        <p class="schedule__txt">10日間の夏期講習をキミが楽しくやりきれるように、サマーキャンプを用意したよ!　８日間で<br>
+            <strong>「AI Naviでのレッスン」「オンラインライブ授業」</strong>に取り組み、5教科の総復習をするよ。総復習の仕上げは<strong>〈マークテスト〉</strong>。 最後の2日間は<strong>〈マークテスト〉</strong>に取り組もう!
+        </p>
+        <ul>
+            <li>※夏期講習に取り組む日程を10日間分設定しよう。</li>
+            <li>※レッスン取り組み日数の「8日間」は目安です。設定内容や取り組み状況によって日数は異なります。</li>
+            <li>※「AI Naviでのレッスン」が早く終わったキミは、「レベル更新」したレッスンに取り組んでみよう。</li>
+            <li>※このサイトは、7/18(月)～8/21(日)まで公開されています。</li>
+        </ul>
+        <p class="schedule__speech"><strong class="-blue">編集室のオススメの日程で進める人</strong>はそのまま「決定！」をタップ。<strong class="-green">日程を自分で選びたい人</strong>はカレンダーの上の「自分で設定する」の<br>
+            タブをタップして、日程を10日分入力しよう。<br>
+            <strong class="-red">日程は後からでも変えられる</strong>から、現時点での予定を入力すればOKだよ！
+        </p>
+        <div>
+            <img src="<%= img %>top/m-modal/ph_nobu.png" alt="">
+        </div>
+    </div>
+
+    <div class="schedule__calendar" data-tab="0">
+        <div class="schedule__tab">
+            <button class="-recommend">
+                <img src="<%= img %>top/m-modal/ttl_recommend.svg" alt="編集室のオススメ">
+            </button>
+            <button class="-setting">
+                <img src="<%= img %>top/m-modal/ttl_setting.svg" alt="自分で設定する">
+            </button>
+        </div>
+        <div class="schedule__cont">
+            <section class="-recommend" data-month="7">
+                <h6 class="schedule__subttl">
+                    <span>オススメスケジュール</span>
+                </h6>
+                <button class="schedule__toggle"></button>
+                <div class="schedule__table">
+                    <% schedule_table.forEach(val => { %>
+                        <button data-date="<%= val.date %>" data-day="<%= val.day %>"></button>
+                    <% }) %>
+                    <p>※グレーの「オンラインライブ授業」は7/24～26と同じ内容です。<br>
+                        詳しくはこのサイトの「夏のオンラインライブ授業＋動画」を見てね。<br>
+                        <span>※グレーの「〈マークテスト〉合宿」は8/7と同じ内容です。8/7に出られなかったキミは参加しよう!</span>
+                    </p>
+                </div>
+                <div class="schedule__btn">
+                    <button class="-decision -active">決定!</button>
+                </div>
+            </section>
+            <section class="-setting">
+                <h6 class="schedule__subttl">
+                    <span>マイスケジュール</span>
+                </h6>
+                <div class="schedule__table">
+                    <% schedule_table.forEach(val => { %>
+                        <button data-date="<%= val.date %>" data-day=""></button>
+                    <% }) %>
+                    <p>※グレーの「オンラインライブ授業」は7/24～26と同じ内容です。<br>
+                        詳しくはこのサイトの「夏のオンラインライブ授業＋動画」を見てね。<br>
+                        ※グレーの「〈マークテスト〉合宿」は8/7と同じ内容です。8/7に出られなかったキミは参加しよう!</p>
+                </div>
+                <div class="schedule__btn">
+                    <button class="-back">前日の選択に戻る</button>
+                    <button class="-decision">決定!</button>
+                </div>
+
+                <div class="m-guide js-modal">
+                    <p class="m-guide__txt">10日分の日付をタップして設定しよう！<br>
+                        <img src="<%= img %>top/m-modal/ico_tap.svg" alt="">
+                    </p>
+                    <button class="m-guide__close js-modal__close">✕</button>
+                </div><!-- /.m-guide -->
+
+            </section>
+        </div>
+    </div>
+
+</section><!-- /.schedule -->
