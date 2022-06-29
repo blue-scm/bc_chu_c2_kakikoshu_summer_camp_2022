@@ -1,8 +1,8 @@
 @use "global"as *;
 
-.m-modal {
+.m-initial {
     @include absPosition(0, 0);
-    background: #dcf0f9 url(#{$img}top/m-modal/bg_header.png) repeat-x left top;
+    background: #dcf0f9 url(#{$img}top/m-initial/bg_header.png) repeat-x left top;
     height: 100%;
     opacity: 0;
     pointer-events: none;
@@ -18,7 +18,7 @@
     }
 }
 
-.m-modal__inner {
+.m-initial__inner {
     display: flex;
     height: 100%;
     transition: 0.4s;
@@ -33,7 +33,7 @@
     }
 }
 
-.m-modal__close {
+.m-initial__close {
     @include absPosition($top: 20px, $right: 20px);
     @include fontsize(12);
     color: #fff;

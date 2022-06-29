@@ -7,7 +7,7 @@
 
 .schedule__ttl {
     align-items: center;
-    background: url(#{$img}top/m-modal/bg_tent.svg) no-repeat 26px center / 124px auto;
+    background: url(#{$img}top/m-initial/bg_tent.svg) no-repeat 26px center / 124px auto;
     display: flex;
     height: 122px;
     padding-left: 162px;
@@ -72,7 +72,7 @@
 
     &:before {
         @include absPosition(20px, calc(100% - 2px));
-        content: url(#{$img}top/m-modal/bg_speech.svg);
+        content: url(#{$img}top/m-initial/bg_speech.svg);
         font-size: 0;
         width: 30px;
     }
@@ -133,7 +133,7 @@
         opacity: 0;
         padding: 24px 30px 0;
         pointer-events: none;
-        transition: 0.2s;
+        transition: opacity 0.2s 0.2s;
         width: 100%;
 
         &.-recommend {
@@ -149,6 +149,8 @@
     [data-tab='1'] & section.-setting {
         opacity: 1;
         pointer-events: auto;
+        transition-delay: 0s;
+        z-index: 1;
     }
 }
 
@@ -232,17 +234,31 @@
         height: calc((100% - 27px) / 6);
         margin-top: 2px;
         position: relative;
+        transition: 0.2s;
         width: calc((100% - 12px) / 7);
+
+        &:after {
+            @include absPosition($top: 5px, $left: 0, $right: 0);
+            font-size: 0;
+            margin: auto;
+            opacity: 0;
+            transform: rotate(-360deg) scale(5);
+            width: 50px;
+            z-index: 1;
+        }
 
         &:not([data-day='']) {
             background-color: #facca0;
 
             &:after {
-                @include absPosition($top: 5px, $left: 0, $right: 0);
-                font-size: 0;
-                margin: auto;
-                width: 50px;
-                z-index: 1;
+                animation: schedule__btn 0.4s forwards;
+
+                @keyframes schedule__btn {
+                    100% {
+                        opacity: 1;
+                        transform: none;
+                    }
+                }
             }
         }
 
@@ -266,7 +282,7 @@
 
     &:after {
         @include absPosition(0, 0);
-        content: url(#{$img}top/m-modal/bg_calendar.svg);
+        content: url(#{$img}top/m-initial/bg_calendar.svg);
         pointer-events: none;
         width: 100%;
     }

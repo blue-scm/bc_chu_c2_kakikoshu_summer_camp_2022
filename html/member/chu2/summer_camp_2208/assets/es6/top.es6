@@ -11,5 +11,7 @@ window.TIMER = new Timer();
 UT.deepFreeze(CONFIG);
 
 import Main from './top/_main';
+import Modal from './top/modal/_index';
 window.TOP = {};
 TOP.main = new Main();
+TOP.modal = new Modal();

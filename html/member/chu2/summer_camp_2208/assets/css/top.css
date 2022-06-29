@@ -820,11 +820,11 @@ iframe[name=google_conversion_frame] {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.m-modal {
+.m-initial {
   position: absolute;
   top: 0;
   left: 0;
-  background: #dcf0f9 url(../img/top/m-modal/bg_header.png) repeat-x left top;
+  background: #dcf0f9 url(../img/top/m-initial/bg_header.png) repeat-x left top;
   height: 100%;
   opacity: 0;
   pointer-events: none;
@@ -833,26 +833,26 @@ iframe[name=google_conversion_frame] {
   width: 100%;
   z-index: 4000;
 }
-.m-modal.-active {
+.m-initial.-active {
   opacity: 1;
   pointer-events: auto;
   transform: none;
 }
 
-.m-modal__inner {
+.m-initial__inner {
   display: flex;
   height: 100%;
   transition: 0.4s;
   width: 200%;
 }
-[data-scene=schedule] .m-modal__inner {
+[data-scene=schedule] .m-initial__inner {
   transform: none;
 }
-[data-scene=howto] .m-modal__inner {
+[data-scene=howto] .m-initial__inner {
   transform: translateX(-50%);
 }
 
-.m-modal__close {
+.m-initial__close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -863,7 +863,7 @@ iframe[name=google_conversion_frame] {
   padding-top: 52px;
   width: 52px;
 }
-.m-modal__close:before, .m-modal__close:after {
+.m-initial__close:before, .m-initial__close:after {
   position: absolute;
   top: 26px;
   left: 50%;
@@ -872,7 +872,7 @@ iframe[name=google_conversion_frame] {
   transform: translate(-50%, -50%) rotate(45deg);
   width: 70px;
 }
-.m-modal__close:after {
+.m-initial__close:after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
@@ -1115,7 +1115,7 @@ iframe[name=google_conversion_frame] {
 
 .howto__ttl {
   align-items: center;
-  background: url(../img/top/m-modal/bg_tent.svg) no-repeat 26px center/124px auto;
+  background: url(../img/top/m-initial/bg_tent.svg) no-repeat 26px center/124px auto;
   display: flex;
   height: 122px;
   padding-left: 162px;
@@ -1137,7 +1137,7 @@ iframe[name=google_conversion_frame] {
 
 .schedule__ttl {
   align-items: center;
-  background: url(../img/top/m-modal/bg_tent.svg) no-repeat 26px center/124px auto;
+  background: url(../img/top/m-initial/bg_tent.svg) no-repeat 26px center/124px auto;
   display: flex;
   height: 122px;
   padding-left: 162px;
@@ -1198,7 +1198,7 @@ iframe[name=google_conversion_frame] {
   position: absolute;
   top: 20px;
   left: calc(100% - 2px);
-  content: url(../img/top/m-modal/bg_speech.svg);
+  content: url(../img/top/m-initial/bg_speech.svg);
   font-size: 0;
   width: 30px;
 }
@@ -1255,7 +1255,7 @@ iframe[name=google_conversion_frame] {
   opacity: 0;
   padding: 24px 30px 0;
   pointer-events: none;
-  transition: 0.2s;
+  transition: opacity 0.2s 0.2s;
   width: 100%;
 }
 .schedule__cont section.-recommend {
@@ -1267,6 +1267,8 @@ iframe[name=google_conversion_frame] {
 [data-tab="0"] .schedule__cont section.-recommend, [data-tab="1"] .schedule__cont section.-setting {
   opacity: 1;
   pointer-events: auto;
+  transition-delay: 0s;
+  z-index: 1;
 }
 
 .schedule__subttl {
@@ -1349,20 +1351,39 @@ iframe[name=google_conversion_frame] {
   height: calc((100% - 27px) / 6);
   margin-top: 2px;
   position: relative;
+  transition: 0.2s;
   width: calc((100% - 12px) / 7);
 }
-.schedule__table button:not([data-day=""]) {
-  background-color: #facca0;
-}
-.schedule__table button:not([data-day=""]):after {
+.schedule__table button:after {
   position: absolute;
   top: 5px;
   left: 0;
   right: 0;
   font-size: 0;
   margin: auto;
+  opacity: 0;
+  transform: rotate(-360deg) scale(5);
   width: 50px;
   z-index: 1;
+}
+.schedule__table button:not([data-day=""]) {
+  background-color: #facca0;
+}
+.schedule__table button:not([data-day=""]):after {
+  -webkit-animation: schedule__btn 0.4s forwards;
+          animation: schedule__btn 0.4s forwards;
+}
+@-webkit-keyframes schedule__btn {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes schedule__btn {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 .schedule__table button[data-day="1"]:after {
   content: url(../img/common/ico_day1.svg);
@@ -1407,7 +1428,7 @@ iframe[name=google_conversion_frame] {
   position: absolute;
   top: 0;
   left: 0;
-  content: url(../img/top/m-modal/bg_calendar.svg);
+  content: url(../img/top/m-initial/bg_calendar.svg);
   pointer-events: none;
   width: 100%;
 }

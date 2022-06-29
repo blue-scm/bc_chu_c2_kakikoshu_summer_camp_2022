@@ -50,12 +50,12 @@
 
     <ul class="header__nav">
         <li>
-            <button class="js-modal__open" data-id="modal" data-scene="schedule">
+            <button class="js-modal__open" data-id="initial" data-scene="schedule">
                 <img src="./assets/img/top/header/ico_calendar.svg" alt="">カレンダーを設定する
             </button>
         </li>
         <li>
-            <button class="js-modal__open" data-id="modal" data-scene="howto">
+            <button class="js-modal__open" data-id="initial" data-scene="howto">
                 <img src="./assets/img/top/header/ico_question.svg" alt="">SUMMER CAMPとは？
             </button>
         </li>
@@ -197,10 +197,10 @@
     <button class="slider__arrow -prev">←</button>
     <button class="slider__arrow -next">→</button>
 
-    <div class="m-guide js-modal">
+    <div class="m-guide">
         <p class="m-guide__txt">未来の日付は選択できないよ！<br>
             予定よりも早く取り組みたいときは、カレンダーを再設定しよう。<br>
-            <button class="js-modal__open" data-id="modal" data-scene="schedule">カレンダーを設定する</button>
+            <button class="js-modal__open" data-id="initial" data-scene="schedule">カレンダーを設定する</button>
         </p>
         <button class="m-guide__close js-modal__close">✕</button>
     </div><!-- /.m-guide -->
@@ -268,7 +268,7 @@
 
 </aside><!-- /.c-talkroom -->
 
-        <section id="welcome" class="m-welcome js-modal">
+        <section id="welcome" class="m-welcome">
 
     <div class="m-welcome__cont">
         <h4>
@@ -284,14 +284,14 @@
     <p class="m-welcome__name">ノブさん（<span data-ruby="なか">中</span><span data-ruby="た">田</span><span data-ruby="のぶ">展</span><span data-ruby="お">生</span>）</p>
 
 </section><!-- /.m-welcome -->
-        <div class="m-modal js-modal" data-scene="schedule">
+        <div id="initial" class="m-initial" data-scene="schedule">
 
-    <div class="m-modal__inner">
+    <div class="m-initial__inner">
 
         <section id="schedule" class="schedule">
 
     <h5 class="schedule__ttl">
-        <img src="./assets/img/top/m-modal/ttl_schedule.svg" alt="日程を登録しよう!">
+        <img src="./assets/img/top/m-initial/ttl_schedule.svg" alt="日程を登録しよう!">
     </h5>
 
     <div class="schedule__desc">
@@ -309,17 +309,17 @@
             <strong class="-red">日程は後からでも変えられる</strong>から、現時点での予定を入力すればOKだよ！
         </p>
         <div>
-            <img src="./assets/img/top/m-modal/ph_nobu.png" alt="">
+            <img src="./assets/img/top/m-initial/ph_nobu.png" alt="">
         </div>
     </div>
 
     <div class="schedule__calendar" data-tab="0">
         <div class="schedule__tab">
             <button class="-recommend">
-                <img src="./assets/img/top/m-modal/ttl_recommend.svg" alt="編集室のオススメ">
+                <img src="./assets/img/top/m-initial/ttl_recommend.svg" alt="編集室のオススメ">
             </button>
             <button class="-setting">
-                <img src="./assets/img/top/m-modal/ttl_setting.svg" alt="自分で設定する">
+                <img src="./assets/img/top/m-initial/ttl_setting.svg" alt="自分で設定する">
             </button>
         </div>
         <div class="schedule__cont">
@@ -498,7 +498,7 @@
                     <button class="-decision">決定!</button>
                 </div>
 
-                <div class="m-guide js-modal">
+                <div class="m-guide">
                     <p class="m-guide__txt">10日分の日付をタップして設定しよう！<br>
                         <img src="./assets/img/top/m-guide/ico_tap.svg" alt="">
                     </p>
@@ -513,25 +513,25 @@
         <section class="howto">
 
     <h5 class="howto__ttl">
-        <img src="./assets/img/top/m-modal/ttl_howto.png" alt="10日間夏期講習《チャレ友 SUMMER CAMP》とは">
+        <img src="./assets/img/top/m-initial/ttl_howto.png" alt="10日間夏期講習《チャレ友 SUMMER CAMP》とは">
     </h5>
 
     <p class="howto__txt">
-        <img src="./assets/img/top/m-modal/txt_howto.svg" alt="夏期講習をキミが楽しくやりきれるように、応援するサイトだよ！">
+        <img src="./assets/img/top/m-initial/txt_howto.svg" alt="夏期講習をキミが楽しくやりきれるように、応援するサイトだよ！">
     </p>
 
     <div class="howto__ph">
-        <img src="./assets/img/top/m-modal/ph_howto.png" alt="ここをタップしてその日のやることをチェック。提案どおりに進められれば、総復習は予定どおり完成するよ。未来の日付や、前の回を確認していない場合はタップできないよ。 夏のオンラインライブ授業＋動画の予定が一目でわかるよ！キミの予定に合わせて参加しよう。 その日の学習に取り組む際のアドバイスが見られるよ。 ノブさんの1分間集中力UPチャレンジ！　勉強を取り組む前に謎解きやゲームに挑戦！　集中力をアップしよう！">
+        <img src="./assets/img/top/m-initial/ph_howto.png" alt="ここをタップしてその日のやることをチェック。提案どおりに進められれば、総復習は予定どおり完成するよ。未来の日付や、前の回を確認していない場合はタップできないよ。 夏のオンラインライブ授業＋動画の予定が一目でわかるよ！キミの予定に合わせて参加しよう。 その日の学習に取り組む際のアドバイスが見られるよ。 ノブさんの1分間集中力UPチャレンジ！　勉強を取り組む前に謎解きやゲームに挑戦！　集中力をアップしよう！">
     </div>
 
 </section><!-- /.howto -->
 
     </div>
 
-    <button class="m-modal__close js-modal__close">とじる</button>
+    <button class="m-initial__close js-modal__close">とじる</button>
 
-</div><!-- /.m-modal -->
-        <section class="m-online js-modal">
+</div><!-- /.m-initial -->
+        <section id="online" class="m-online">
 
     <h5 class="m-online__ttl">
         <img src="./assets/img/top/m-online/ttl_online.png" alt="夏のオンラインライブ授業＋動画">
