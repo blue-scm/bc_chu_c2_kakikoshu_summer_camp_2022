@@ -209,12 +209,12 @@
         width: 6px;
     }
 
-    [data-month='7'] &:before {
+    [data-month='july'] &:before {
         content: '8月から取り組みたい\Aキミはこちら！';
         white-space: pre;
     }
 
-    [data-month='8'] &:before {
+    [data-month='august'] &:before {
         content: '7月から取り組みたい\Aキミはこちら！';
         white-space: pre;
     }
@@ -236,6 +236,40 @@
         position: relative;
         transition: 0.2s;
         width: calc((100% - 12px) / 7);
+
+        span {
+            @include absPosition($left: 20px, $bottom: calc(100% - 5px));
+            @include fontsize(12);
+            animation: schedule__speech 0.4s forwards;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 4px rgba(#000, 0.4);
+            color: #4d4d4d;
+            font-weight: bold;
+            line-height: 1.2;
+            opacity: 0;
+            padding: 8px 10px;
+            text-align: left;
+            transform: translateY(-5px);
+            white-space: nowrap;
+            z-index: 1;
+
+            @keyframes schedule__speech {
+                100% {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+
+            &:after {
+                @include absPosition($left: 50%, $bottom: -5px);
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid #fff;
+                content: '';
+                transform: translateX(-50%);
+            }
+        }
 
         &:after {
             @include absPosition($top: 5px, $left: 0, $right: 0);
@@ -287,7 +321,7 @@
         width: 100%;
     }
 
-    [data-month='7'] & p span {
+    [data-month='july'] & p span {
         display: none;
     }
 }

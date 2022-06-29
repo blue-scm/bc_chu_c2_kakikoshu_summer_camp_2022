@@ -33,14 +33,14 @@
             </button>
         </div>
         <div class="schedule__cont">
-            <section class="-recommend" data-month="7">
+            <section class="-recommend" data-month="july">
                 <h6 class="schedule__subttl">
                     <span>オススメスケジュール</span>
                 </h6>
                 <button class="schedule__toggle"></button>
                 <div class="schedule__table">
-                    <% schedule_table.forEach(val => { %>
-                        <button data-date="<%= val.date %>" data-day="<%= val.day %>"></button>
+                    <% schedule_table.forEach(date => { %>
+                        <button data-date="<%= date %>" data-day=""></button>
                     <% }) %>
                     <p>※グレーの「オンラインライブ授業」は7/24～26と同じ内容です。<br>
                         詳しくはこのサイトの「夏のオンラインライブ授業＋動画」を見てね。<br>
@@ -56,8 +56,8 @@
                     <span>マイスケジュール</span>
                 </h6>
                 <div class="schedule__table">
-                    <% schedule_table.forEach(val => { %>
-                        <button data-date="<%= val.date %>" data-day=""></button>
+                    <% schedule_table.forEach(date => { %>
+                        <button data-date="<%= date %>" data-day=""></button>
                     <% }) %>
                     <p>※グレーの「オンラインライブ授業」は7/24～26と同じ内容です。<br>
                         詳しくはこのサイトの「夏のオンラインライブ授業＋動画」を見てね。<br>
@@ -68,7 +68,7 @@
                     <button class="-decision">決定!</button>
                 </div>
 
-                <div class="m-guide">
+                <div id="guide" class="m-guide">
                     <p class="m-guide__txt">10日分の日付をタップして設定しよう！<br>
                         <img src="<%= img %>top/m-guide/ico_tap.svg" alt="">
                     </p>

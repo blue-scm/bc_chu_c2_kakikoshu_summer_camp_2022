@@ -2,6 +2,8 @@ export default class Welcome {
 
     constructor() {
 
+        this.$welcome = document.getElementById('welcome');
+
         this.init();
 
     }
@@ -9,6 +11,7 @@ export default class Welcome {
     init() {
 
         this.setFirstVisit();
+        this.addTransitionend();
 
     }
 
@@ -16,8 +19,20 @@ export default class Welcome {
 
         if (STORAGE.data.state.welcome) return;
 
-        const $welcome = document.getElementById('welcome');
-        $welcome.classList.add('-active');
+        this.$welcome.classList.add('-active');
+
+    }
+
+    addTransitionend() {
+
+        this.$welcome.addEventListener('transitionend', e => {
+
+            if (e.target.className != 'm-welcome') return;
+
+            const recommendDate = CONFIG.RECOMMEND_DATE[STORAGE.data.state.month];
+            TOP.modal.schedule.setDay(recommendDate, 'recommend');
+
+        });
 
     }
 

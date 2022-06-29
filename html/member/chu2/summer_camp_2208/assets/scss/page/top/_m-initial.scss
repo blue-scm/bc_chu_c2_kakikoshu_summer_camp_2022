@@ -34,7 +34,7 @@
 }
 
 .m-initial__close {
-    @include absPosition($top: 20px, $right: 20px);
+    @include absPosition($top: 30px, $right: 20px);
     @include fontsize(12);
     color: #fff;
     font-weight: bold;

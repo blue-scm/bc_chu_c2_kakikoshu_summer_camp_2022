@@ -854,7 +854,7 @@ iframe[name=google_conversion_frame] {
 
 .m-initial__close {
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 20px;
   font-size: 0.75rem;
   color: #fff;
@@ -1328,11 +1328,11 @@ iframe[name=google_conversion_frame] {
   transform: translateY(-50%) rotate(45deg);
   width: 6px;
 }
-[data-month="7"] .schedule__toggle:before {
+[data-month=july] .schedule__toggle:before {
   content: "8月から取り組みたい\aキミはこちら！";
   white-space: pre;
 }
-[data-month="8"] .schedule__toggle:before {
+[data-month=august] .schedule__toggle:before {
   content: "7月から取り組みたい\aキミはこちら！";
   white-space: pre;
 }
@@ -1353,6 +1353,48 @@ iframe[name=google_conversion_frame] {
   position: relative;
   transition: 0.2s;
   width: calc((100% - 12px) / 7);
+}
+.schedule__table button span {
+  position: absolute;
+  left: 20px;
+  bottom: calc(100% - 5px);
+  font-size: 0.75rem;
+  -webkit-animation: schedule__speech 0.4s forwards;
+          animation: schedule__speech 0.4s forwards;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  color: #4d4d4d;
+  font-weight: bold;
+  line-height: 1.2;
+  opacity: 0;
+  padding: 8px 10px;
+  text-align: left;
+  transform: translateY(-5px);
+  white-space: nowrap;
+  z-index: 1;
+}
+@-webkit-keyframes schedule__speech {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes schedule__speech {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.schedule__table button span:after {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  content: "";
+  transform: translateX(-50%);
 }
 .schedule__table button:after {
   position: absolute;
@@ -1432,7 +1474,7 @@ iframe[name=google_conversion_frame] {
   pointer-events: none;
   width: 100%;
 }
-[data-month="7"] .schedule__table p span {
+[data-month=july] .schedule__table p span {
   display: none;
 }
 
