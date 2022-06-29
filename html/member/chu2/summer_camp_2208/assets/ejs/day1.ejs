@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <%- include('./common/_meta', { page: 'lower' }) %>
+
+</head>
+
+<body>
+
+    <header><!-- ベネッセヘッダー領域 --></header>
+
+    <main id="main" class="l-main -<%= day1.color %>">
+
+        <%- include('./lower/_header') %>
+        <%- include('./lower/_left') %>
+        <%- include('./lower/_up') %>
+
+    </main><!-- /.l-main -->
+
+    <footer><!-- ベネッセフッター領域 --></footer>
+
+    <%- include('./common/_js', { page: 'lower' }) %>
+
+</body>
+
+</html>
