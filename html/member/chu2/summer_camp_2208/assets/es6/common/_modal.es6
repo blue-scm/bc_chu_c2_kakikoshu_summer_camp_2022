@@ -7,10 +7,12 @@ export default class Modal {
 
     constructor() {
 
-        this.welcome = new Welcome();
-        this.initial = new Initial();
-        this.schedule = new Schedule();
-        this.guide = new Guide();
+        if (window.TOP) {
+            this.welcome = new Welcome();
+            this.initial = new Initial();
+            this.schedule = new Schedule();
+            this.guide = new Guide();
+        }
 
         this.init();
 

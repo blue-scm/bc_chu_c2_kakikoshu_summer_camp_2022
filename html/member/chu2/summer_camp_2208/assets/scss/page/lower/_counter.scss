@@ -1,0 +1,90 @@
+@use "global"as *;
+
+.counter {
+    align-items: center;
+    background-image: url(#{$img}lower/blue/bg_tile.png);
+    border-top-right-radius: 40px;
+    color: #fff;
+    display: flex;
+    height: 170px;
+    justify-content: space-between;
+    line-height: 1;
+    padding: 0 40px;
+    text-align: center;
+    width: 670px;
+}
+
+.counter__display {
+    font-weight: bold;
+    margin: 0;
+    position: relative;
+
+    dt {
+        @include absPosition($left: 0, $bottom: calc(100% + 6px));
+        @include fontsize(25);
+        color: #ffff46;
+        width: 100%;
+
+        strong,
+        span {
+            position: relative;
+            z-index: 0;
+
+            &:before {
+                @include absPosition(50%);
+                content: attr(data-txt);
+                -webkit-text-stroke: 10px #0057a1;
+                transform: translateY(-50%);
+                z-index: -1;
+            }
+        }
+
+        strong {
+            @include fontsize(36);
+            font-family: urw-din-condensed, sans-serif;
+        }
+    }
+
+    dd {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        position: relative;
+        width: 246px;
+
+        span {
+            @include fontsize(46);
+            background-color: #fff;
+            border-radius: 4px;
+            color: #0057a1;
+            line-height: calc(98px - 0.1em);
+            padding-bottom: 0.1em;
+            width: 46px;
+        }
+
+        &:after {
+            @include absPosition($left: calc(100% + 4px), $bottom: 0);
+            @include fontsize(24);
+            content: '人';
+        }
+    }
+}
+
+.counter__btn {
+    position: relative;
+    width: 300px;
+
+    a {
+        display: block;
+    }
+
+    img[src*='btn_ai-navi'] {
+        margin-top: -18px;
+    }
+
+    span {
+        @include absPosition(calc(100% + 6px), 0);
+        @include fontsize(13);
+        width: 100%;
+    }
+}

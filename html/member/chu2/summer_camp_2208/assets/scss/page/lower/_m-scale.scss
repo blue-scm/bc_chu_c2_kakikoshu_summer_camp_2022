@@ -1,0 +1,47 @@
+@use "global"as *;
+
+.m-scale {
+    @include absPosition(0, 0);
+    background-color: rgba(#002339, 0.9);
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.1);
+    transition: 0.4s;
+    width: 100%;
+    z-index: $zLayer5;
+
+    &.-active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+}
+
+.m-scale__ph {
+    @include absPosition(50%, 50%);
+    transform: translate(-50%, -50%);
+
+    img {
+        width: 600px;
+    }
+}
+
+.m-scale__close {
+    @include absPosition($top: 30px, $right: 30px);
+    font-size: 0;
+    padding: 30px;
+
+    &:before,
+    &:after {
+        @include absPosition(50%, 50%);
+        border-top: 1px solid #fff;
+        content: '';
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 80px;
+    }
+
+    &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}

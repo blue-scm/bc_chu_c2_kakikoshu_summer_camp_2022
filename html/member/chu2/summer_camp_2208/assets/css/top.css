@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(https://use.typekit.net/isp4nal.css);
 /* Document
  * ========================================================================== */
 /**
@@ -635,6 +636,12 @@ iframe[name=google_conversion_frame] {
   width: 100%;
   z-index: 6000;
 }
+.l-main.-blue {
+  background: url(../img/lower/blue/bg_main.png) no-repeat;
+}
+.l-main.-green {
+  background: url(../img/lower/green/bg_main.png) no-repeat;
+}
 .l-main.-show:after {
   opacity: 0;
   pointer-events: none;
@@ -973,12 +980,12 @@ iframe[name=google_conversion_frame] {
 .m-welcome__name span:before {
   position: absolute;
   top: -0.4em;
-  left: 50%;
+  left: 0;
   content: attr(data-ruby);
   font-size: 0.4em;
   line-height: 1;
-  transform: translateX(-50%);
-  white-space: nowrap;
+  text-align: center;
+  width: 100%;
 }
 .-show .m-welcome__name {
   opacity: 1;

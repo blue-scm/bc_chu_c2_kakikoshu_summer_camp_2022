@@ -30,7 +30,7 @@ export default class Welcome {
             if (e.target.className != 'm-welcome') return;
 
             const recommendDate = CONFIG.RECOMMEND_DATE[STORAGE.data.state.month];
-            TOP.modal.schedule.setDay(recommendDate, 'recommend');
+            MODAL.schedule.setDay(recommendDate, 'recommend');
 
         });
 

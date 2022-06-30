@@ -92,12 +92,12 @@
         position: relative;
 
         &:before {
-            @include absPosition(-0.4em, 50%);
+            @include absPosition(-0.4em, 0);
             content: attr(data-ruby);
             font-size: 0.4em;
             line-height: 1;
-            transform: translateX(-50%);
-            white-space: nowrap;
+            text-align: center;
+            width: 100%;
         }
     }
 

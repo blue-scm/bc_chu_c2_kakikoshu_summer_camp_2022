@@ -29,10 +29,10 @@ export default class Main {
 
             if (STORAGE.data.state.welcome && !STORAGE.data.state.calendar || STORAGE.data.state.calendar == 'setting') {
                 const recommendDate = CONFIG.RECOMMEND_DATE[STORAGE.data.state.month];
-                TOP.modal.schedule.setDay(recommendDate, 'recommend');
+                MODAL.schedule.setDay(recommendDate, 'recommend');
             }
 
-            STORAGE.data.state.calendar == 'setting' && (TOP.modal.schedule.$calendar.dataset.tab = 1);
+            STORAGE.data.state.calendar == 'setting' && (MODAL.schedule.$calendar.dataset.tab = 1);
 
         });
 

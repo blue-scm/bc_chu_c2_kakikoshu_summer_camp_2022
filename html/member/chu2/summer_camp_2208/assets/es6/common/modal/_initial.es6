@@ -38,11 +38,11 @@ export default class Initial {
             if (!e.target.classList.contains('-active')) return;
 
             const dateArray = STORAGE.data.state.calendar == 'recommend' ? CONFIG.RECOMMEND_DATE[STORAGE.data.state.month] : STORAGE.data.settingDate;
-            TOP.modal.schedule.setDay(dateArray, STORAGE.data.state.calendar);
+            MODAL.schedule.setDay(dateArray, STORAGE.data.state.calendar);
 
             if (STORAGE.data.state.calendar == 'setting') {
-                TOP.modal.schedule.currentDay = 10;
-                TOP.modal.schedule.setBtn();
+                MODAL.schedule.currentDay = 10;
+                MODAL.schedule.setBtn();
             }
 
         });

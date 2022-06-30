@@ -22,6 +22,14 @@
         z-index: $zLayer6;
     }
 
+    &.-blue {
+        background: url(#{$img}lower/blue/bg_main.png) no-repeat;
+    }
+
+    &.-green {
+        background: url(#{$img}lower/green/bg_main.png) no-repeat;
+    }
+
     &.-show:after {
         opacity: 0;
         pointer-events: none;

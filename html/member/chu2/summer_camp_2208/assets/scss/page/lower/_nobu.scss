@@ -1,0 +1,64 @@
+@use "global"as *;
+
+.nobu {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+    width: 670px;
+}
+
+.nobu__ph {
+    width: 316px;
+
+    img {
+        margin: auto;
+    }
+}
+
+.nobu__txt {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    position: relative;
+    width: calc(100% - 316px);
+
+    p {
+        @include fontsize(20);
+        background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #fff 50%, #fff 100%),
+            linear-gradient(180deg, #998985 1px, transparent 1px);
+        background-size: 4px 100%,
+            100% 1.8em;
+        color: #333;
+        font-weight: 500;
+        line-height: 1.8;
+        min-height: calc(1.8em * 7 + 1px);
+        padding-bottom: 1px;
+    }
+
+    strong {
+        color: #ef3131;
+        font-weight: 900;
+    }
+
+    span {
+        position: relative;
+
+        &:before {
+            @include absPosition(-0.5em, 0);
+            content: attr(data-ruby);
+            font-size: 0.5em;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    &:before {
+        @include absPosition(60px, -28px);
+        content: url(#{$img}lower/bg_speech.svg);
+        font-size: 0;
+        width: 30px;
+    }
+}

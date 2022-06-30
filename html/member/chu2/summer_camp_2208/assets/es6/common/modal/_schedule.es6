@@ -147,7 +147,7 @@ export default class Schedule {
 
     nextScene(settingDate, calendar) {
 
-        STORAGE.data.state.calendar ? TOP.modal.setClose(TOP.modal.initial.$initial) : TOP.modal.initial.setScene('howto');
+        STORAGE.data.state.calendar ? MODAL.setClose(MODAL.initial.$initial) : MODAL.initial.setScene('howto');
 
         STORAGE.data.settingDate = settingDate;
         STORAGE.data.state.calendar = calendar;

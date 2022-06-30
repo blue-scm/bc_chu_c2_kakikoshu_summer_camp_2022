@@ -1,0 +1,74 @@
+@use "global"as *;
+
+.up {
+    @include absPosition($top: calc(50% + 100px), $right: 80px);
+    background-color: #ffff90;
+    border-radius: 10px;
+    padding: 25px;
+    transform: translateY(-50%);
+    width: 450px;
+}
+
+.up__ttl {
+    margin: -90px 0 0 -90px;
+}
+
+.up__txt {
+    @include fontsize(16);
+    color: #0057a1;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 10px;
+
+    span {
+        position: relative;
+
+        &:before {
+            @include absPosition(-0.625em, 0);
+            content: attr(data-ruby);
+            font-size: 0.625em;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    strong {
+        color: #ef3131;
+        font-weight: 900;
+    }
+}
+
+.up__ph {
+    margin-top: 16px;
+    position: relative;
+
+    p {
+        transition: 0.4s;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    button {
+        @include absPosition($top: -10px, $right: -10px);
+        width: 42px;
+    }
+
+    .-answer & p {
+        opacity: 0;
+    }
+
+    @for $i from 1 through 10 {
+        .-day#{$i} & {
+            background: url(#{$img}lower/up/ph#{$i}_answer.png) no-repeat;
+        }
+    }
+}
+
+.up__answer {
+    @include absPosition($bottom: -20px, $right: -40px);
+    width: 120px;
+}
