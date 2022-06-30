@@ -5,6 +5,9 @@ export default class State {
         // 今日の日時
         this.today = new Date();
 
+        // カウンターのURL
+        this.counterUrl = CONFIG.COUNTER.URL;
+
         CONFIG.USE_PARAM && this.init();
 
     }
@@ -18,6 +21,9 @@ export default class State {
 
         // 今日の日付を変更
         this.changeToday();
+
+        // カウンターをテストモードに変更
+        this.changeTest();
 
     }
 
@@ -40,6 +46,14 @@ export default class State {
         let dateTime = this.obj.date;
         dateTime += this.obj.time ? ` ${this.obj.time}` : ``;
         this.today = new Date(dateTime);
+
+    }
+
+    changeTest() {
+
+        if (!this.obj.test) return;
+
+        this.counterUrl = CONFIG.COUNTER.TEST;
 
     }
 

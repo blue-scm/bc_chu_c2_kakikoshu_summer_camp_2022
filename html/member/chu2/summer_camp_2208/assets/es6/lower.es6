@@ -11,9 +11,11 @@ window.TIMER = new Timer();
 UT.deepFreeze(CONFIG);
 
 import Main from './lower/_main';
+import Counter from './lower/_counter';
 import Up from './lower/_up';
 import Modal from './common/_modal';
 window.LOWER = {};
 LOWER.main = new Main();
+LOWER.counter = new Counter();
 LOWER.up = new Up();
 window.MODAL = new Modal();

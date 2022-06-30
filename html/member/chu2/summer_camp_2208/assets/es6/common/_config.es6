@@ -1,5 +1,14 @@
 export const Config = {
 
+    COUNTER: {
+        ADDITION: 1,
+        BTN_ID: 1,
+        DIGIT: 5,
+        TEST: 'assets/json/test.json',
+        THM_ID: 'count_c',
+        URL: 'https://library.benesse.ne.jp/bbsui/uiservice/',
+    },
+
     LOCAL_STORAGE: {
         DATA: {
             settingDate: [],
@@ -15,6 +24,6 @@ export const Config = {
         august: ['2022/8/1', '2022/8/2', '2022/8/3', '2022/8/4', '2022/8/5', '2022/8/6', '2022/8/8', '2022/8/9', '2022/8/20', '2022/8/21'],
     },
 
-    USE_PARAM: true, // パラメータの使用
+    USE_PARAM: true,
 
 }

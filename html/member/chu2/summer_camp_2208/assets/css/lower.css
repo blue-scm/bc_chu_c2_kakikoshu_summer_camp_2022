@@ -1050,34 +1050,34 @@ iframe[name=google_conversion_frame] {
 .-answer .up__ph p {
   opacity: 0;
 }
-.-day1 .up__ph {
+[data-day="1"] .up__ph {
   background: url(../img/lower/up/ph1_answer.png) no-repeat;
 }
-.-day2 .up__ph {
+[data-day="2"] .up__ph {
   background: url(../img/lower/up/ph2_answer.png) no-repeat;
 }
-.-day3 .up__ph {
+[data-day="3"] .up__ph {
   background: url(../img/lower/up/ph3_answer.png) no-repeat;
 }
-.-day4 .up__ph {
+[data-day="4"] .up__ph {
   background: url(../img/lower/up/ph4_answer.png) no-repeat;
 }
-.-day5 .up__ph {
+[data-day="5"] .up__ph {
   background: url(../img/lower/up/ph5_answer.png) no-repeat;
 }
-.-day6 .up__ph {
+[data-day="6"] .up__ph {
   background: url(../img/lower/up/ph6_answer.png) no-repeat;
 }
-.-day7 .up__ph {
+[data-day="7"] .up__ph {
   background: url(../img/lower/up/ph7_answer.png) no-repeat;
 }
-.-day8 .up__ph {
+[data-day="8"] .up__ph {
   background: url(../img/lower/up/ph8_answer.png) no-repeat;
 }
-.-day9 .up__ph {
+[data-day="9"] .up__ph {
   background: url(../img/lower/up/ph9_answer.png) no-repeat;
 }
-.-day10 .up__ph {
+[data-day="10"] .up__ph {
   background: url(../img/lower/up/ph10_answer.png) no-repeat;
 }
 

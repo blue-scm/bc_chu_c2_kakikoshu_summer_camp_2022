@@ -89,19 +89,6 @@ export default class Utility {
     }
 
     /*
-    カウンターのオプション取得
-    obj：オブジェクトのデータ
-    */
-    static option(obj) {
-
-        const json = { json: JSON.stringify(obj) },
-            option = { data: json, dataType: 'json', type: 'POST', url: STATE.counterUrl };
-
-        return option;
-
-    }
-
-    /*
     乱数取得
     min：範囲の最小値
     max：範囲の最大値

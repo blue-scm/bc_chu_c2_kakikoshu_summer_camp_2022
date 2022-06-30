@@ -62,7 +62,7 @@
     }
 
     @for $i from 1 through 10 {
-        .-day#{$i} & {
+        [data-day='#{$i}'] & {
             background: url(#{$img}lower/up/ph#{$i}_answer.png) no-repeat;
         }
     }
