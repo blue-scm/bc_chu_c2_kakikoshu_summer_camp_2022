@@ -14,10 +14,13 @@ export default class Up {
 
     addAnswer() {
 
-        const $up = document.getElementById('up'),
-            $answer = $up.querySelector('.up__answer');
+        const $up = document.getElementById('up');
+        if ($up != null) {
+            const $answer = $up.querySelector('.up__answer');
 
-        $answer.addEventListener('click', () => $up.classList.toggle('-answer'));
+            $answer.addEventListener('click', () => $up.classList.toggle('-answer'));
+        }
+           
 
     }
 

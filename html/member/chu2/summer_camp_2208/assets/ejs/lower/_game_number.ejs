@@ -1,0 +1,32 @@
+<section id="game_number" class="game_number">
+
+    <h2 class="up__ttl">
+        <img src="<%= img %>lower/<%= data.color %>/ttl_up.png" alt="ノブさんの1分間集中力UPチャレンジ！">
+    </h2>
+
+    <p class="up__txt"><%- data.up_txt %></p>
+
+    <div class="up__ph">
+        <div id="wrap">
+            <!-- スタート画面 -->
+            <div id="start">
+                <div id="title"><img src="<%= img %>lower/trump/title.png"></div>
+                <div id="txt"><img src="<%= img %>lower/trump/txt.png"></div>
+                <div id="str_btn" onclick="Button1_Click('start');"><img id="str_img" src="<%= img %>lower/trump/strbtn.png"></div>
+            </div>
+            <!-- タイマー -->
+            <div id="timer">
+                <!-- 戻るボタン -->
+                <div id="return_btn" onclick="Button2_Click();"><img src="<%= img %>lower/trump/return_btn.png"></div>
+                <img src="<%= img %>lower/trump/timer.png" alt="タイマー">
+                <div id="result">0秒</div>
+            </div>
+            <div id="panel"></div>
+            <div id="message"><img src="<%= img %>lower/trump/clear.png" class="clear"></div>
+            <div id="sec"></div>
+            <div id="retry_btn" onclick="Button2_Click();"><img src="<%= img %>lower/trump/retry.png"></div>
+        </div>
+
+    </div>
+
+</section><!-- /.up -->

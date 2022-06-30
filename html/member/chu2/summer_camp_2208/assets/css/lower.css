@@ -828,6 +828,181 @@ iframe[name=google_conversion_frame] {
   width: 100%;
 }
 
+#wrap {
+  width: 346px;
+  height: 330px;
+  background-image: url(../img/lower/trump/bg.png);
+  margin: auto;
+  position: relative;
+}
+
+/* タイトル画面 */
+#start {
+  display: none;
+  margin: auto;
+  text-align: center;
+}
+
+#title {
+  padding-top: 20px;
+}
+
+#txt {
+  margin: 5px 20px 0;
+}
+
+#str_btn {
+  margin: 15px auto 0;
+  width: 194px;
+}
+
+/* ゲーム画面 */
+#return_btn {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+#panel {
+  width: 330px;
+  height: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.card {
+  color: gray;
+  width: 55px;
+  height: 63px;
+  margin: 5px;
+  line-height: 64px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  box-shadow: 3px 3px rgba(17, 17, 17, 0.25);
+  background: white;
+  float: left;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 2px solid #fbd954;
+}
+
+/* 裏の状態 */
+.back {
+  background-image: url(../img/lower/trump/card.png);
+  background-size: 55px 63px;
+  stroke: yellow;
+}
+
+/* 終了時 */
+.finish {
+  opacity: 0;
+  cursor: default;
+}
+
+/* 経過秒数 */
+#timer {
+  padding: 30px 0 10px 118px;
+}
+
+#result {
+  color: #006473;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin-left: -22px;
+  margin-top: -35px;
+}
+
+/* クリア画面 */
+#sec {
+  box-sizing: content-box;
+  color: #006473;
+  background-image: url(../img/lower/trump/cleartime.png);
+  background-repeat: no-repeat;
+  background-position: 124px;
+  height: 82px;
+  display: none;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: -18px;
+  margin-top: -40px;
+  padding-top: 62px;
+  padding-left: 14px;
+  text-align: center;
+}
+
+#message {
+  text-align: center;
+  display: none;
+  padding-top: 20px;
+}
+
+img.clear {
+  width: 312px;
+}
+
+#cleartime {
+  display: none;
+  margin: auto;
+  margin-left: 110px;
+}
+
+#retry_btn {
+  display: none;
+  margin: auto;
+  margin-top: -8px;
+  margin-left: 96px;
+  padding: 10px;
+}
+
+.game_trump {
+  position: absolute;
+  top: calc(50% + 100px);
+  right: 80px;
+  background-color: #ffff90;
+  border-radius: 10px;
+  padding: 25px;
+  transform: translateY(-50%);
+  width: 450px;
+}
+
+.game_trump__ttl {
+  margin: -90px 0 0 -90px;
+}
+
+.game_trump__txt {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.game_trump__txt span {
+  position: relative;
+}
+.game_trump__txt span:before {
+  position: absolute;
+  top: -0.625em;
+  left: 0;
+  content: attr(data-ruby);
+  font-size: 0.625em;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+.game_trump__txt strong {
+  color: #ef3131;
+  font-weight: 900;
+}
+.-blue .game_trump__txt {
+  color: #0057a1;
+}
+.-green .game_trump__txt {
+  color: #00695c;
+}
+
 .header {
   align-items: center;
   display: flex;

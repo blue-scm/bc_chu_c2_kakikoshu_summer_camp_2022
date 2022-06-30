@@ -1,0 +1,33 @@
+<% data = day7 %>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <%- include('./common/_meta', { page: 'lower' }) %>
+
+</head>
+
+<body>
+
+    <header><!-- ベネッセヘッダー領域 --></header>
+
+    <main id="main" class="l-main -<%= data.color %>" data-day="<%= data.day %>">
+
+        <%- include('./lower/_header') %>
+        <%- include('./lower/_nobu') %>
+        <%- include('./lower/_counter') %>
+        <%- include('./lower/_up') %>
+
+        <%- include('./lower/_m-scale') %>
+
+    </main><!-- /.l-main -->
+
+    <footer><!-- ベネッセフッター領域 --></footer>
+
+    <%- include('./common/_js', { page: 'lower' }) %>
+
+</body>
+
+</html>
