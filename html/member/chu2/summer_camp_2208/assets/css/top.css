@@ -716,6 +716,114 @@ iframe[name=google_conversion_frame] {
   margin-left: -0.5em;
 }
 
+.c-talkroom {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+}
+
+.c-talkroom__ttl {
+  background-color: #0089cf;
+  border-radius: 6px 6px 0 0;
+  line-height: 28px;
+  margin: 0;
+  text-align: center;
+}
+
+.c-talkroom__body {
+  background-color: rgba(180, 210, 250, 0.8);
+  border-radius: 0 0 6px 6px;
+  height: 440px;
+}
+.c-talkroom__body.-editor {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100px;
+}
+
+.c-talkroom__list__item {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.c-talkroom__list__item + .c-talkroom__list__item {
+  margin-top: 10px;
+}
+.c-talkroom__list__item.-editor {
+  padding: 0;
+}
+.c-talkroom__list__item.-editor + .c-talkroom__list__item.-editor {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+.c-talkroom__list__item.-editor .c-talkroom__list__item__icon {
+  display: none;
+}
+.c-talkroom__list__item.-editor .c-talkroom__list__item__body {
+  color: #eb5a24;
+  font-weight: 500;
+}
+.c-talkroom__list__item.-editor .c-talkroom__list__item__author,
+.c-talkroom__list__item.-editor .c-talkroom__list__item__date {
+  margin-top: 15px;
+}
+
+.c-talkroom__list__item__ttl {
+  display: none;
+}
+
+.js-talkroom__user__list .c-talkroom__list__item {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 40px;
+  padding: 10px;
+  position: relative;
+}
+.js-talkroom__user__list .c-talkroom__list__item:before {
+  position: absolute;
+  top: 10px;
+  left: -8px;
+  border-top: 8px solid #fff;
+  border-left: 8px solid transparent;
+  content: "";
+}
+.js-talkroom__user__list .c-talkroom__list__item:nth-child(even) {
+  background-color: #ffffcd;
+}
+.js-talkroom__user__list .c-talkroom__list__item__icon {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+.c-talkroom__list__item__body {
+  width: 100%;
+}
+
+.c-talkroom__list__item__author,
+.c-talkroom__list__item__date {
+  color: #000;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.c-talkroom__pagenate {
+  margin-top: 10px;
+}
+
+.c-talkroom__submit {
+  margin: 20px 0 5px;
+}
+.c-talkroom__submit:before, .c-talkroom__submit:after {
+  display: none;
+}
+
+.c-talkroom__notice {
+  color: #949494;
+}
+
 .u-clearfix:after {
   clear: both;
   content: "";
@@ -1283,10 +1391,6 @@ iframe[name=google_conversion_frame] {
 }
 .slider__arrow.-next {
   right: 20px;
-}
-
-.c-talkroom {
-  display: none;
 }
 
 .howto {
