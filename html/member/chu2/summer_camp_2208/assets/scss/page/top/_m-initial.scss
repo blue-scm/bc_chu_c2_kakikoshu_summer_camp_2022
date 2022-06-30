@@ -5,16 +5,15 @@
     background: #dcf0f9 url(#{$img}top/m-initial/bg_header.png) repeat-x left top;
     height: 100%;
     opacity: 0;
-    pointer-events: none;
     transform: scale(1.1);
     transition: 0.4s;
     width: 100%;
-    z-index: $zLayer4;
+    z-index: -1;
 
     &.-active {
         opacity: 1;
-        pointer-events: auto;
         transform: none;
+        z-index: $zLayer4;
     }
 }
 

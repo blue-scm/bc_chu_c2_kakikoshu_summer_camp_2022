@@ -1,0 +1,61 @@
+@use "global"as *;
+
+.m-online {
+    @include absPosition(0, 0);
+    background-color: #b6ce61;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.1);
+    transition: 0.4s;
+    width: 100%;
+    z-index: $zLayer4;
+
+    &.-active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+}
+
+.m-online__txt img {
+    margin: -17px auto 0;
+}
+
+.m-online__detail {
+    @include absPosition($bottom: 22px, $right: 290px);
+    width: 150px;
+}
+
+.m-online__join {
+    @include absPosition($bottom: 14px, $right: 14px);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(#000, 0.12);
+
+    a {
+        display: block;
+    }
+}
+
+.m-online__close {
+    @include absPosition($top: 40px, $right: 30px);
+    @include fontsize(12);
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    padding-top: 60px;
+    width: 60px;
+
+    &:before,
+    &:after {
+        @include absPosition(30px, 50%);
+        border-top: 2px solid #fff;
+        content: '';
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 80px;
+    }
+
+    &:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
