@@ -26,12 +26,9 @@ export default class Welcome {
     addTransitionend() {
 
         this.$welcome.addEventListener('transitionend', e => {
-
             if (e.target.className != 'm-welcome') return;
-
             const recommendDate = CONFIG.RECOMMEND_DATE[STORAGE.data.state.month];
             MODAL.schedule.setDay(recommendDate, 'recommend');
-
         });
 
     }

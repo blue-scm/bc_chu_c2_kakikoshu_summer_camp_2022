@@ -34,17 +34,13 @@ export default class Initial {
 
         if (scene != 'schedule') return;
 
-        this.$initial.addEventListener('transitionend', e => {
-            if (!e.target.classList.contains('-active')) return;
-
+        UT.once(this.$initial, 'transitionend', () => {
             const dateArray = STORAGE.data.state.calendar == 'recommend' ? CONFIG.RECOMMEND_DATE[STORAGE.data.state.month] : STORAGE.data.settingDate;
             MODAL.schedule.setDay(dateArray, STORAGE.data.state.calendar);
-
             if (STORAGE.data.state.calendar == 'setting') {
                 MODAL.schedule.currentDay = 10;
                 MODAL.schedule.setBtn();
             }
-
         });
 
     }
