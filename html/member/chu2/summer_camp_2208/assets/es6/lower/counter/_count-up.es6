@@ -3,9 +3,8 @@ export default class CountUp {
     constructor(counter) {
 
         this.counter = counter;
-        this.$btn = this.counter.$counter.querySelector('.counter__btn a');
         this.ua = window.navigator.userAgent;
-        this.href = this.$btn.href;
+        this.href = this.counter.$btn.href;
 
         this.init();
 
@@ -20,7 +19,7 @@ export default class CountUp {
     addCounter() {
 
         // カウンターボタン押下時
-        this.$btn.addEventListener('click', e => this.getCountUp(e));
+        this.counter.$btn.addEventListener('click', e => this.getCountUp(e));
 
     }
 
@@ -40,6 +39,11 @@ export default class CountUp {
         // カウンター数を加算後にゼロパディング形式で表示
         this.counter.num += CONFIG.COUNTER.ADDITION;
         this.counter.utility.setDisplay();
+
+        // カウンターボタンを押下済みに設定
+        this.counter.$btn.classList.add('-already');
+        STORAGE.data.state.already++;
+        STORAGE.set();
 
         // リダイレクト
         const terms = this.ua.indexOf('BenesseBrowser') != -1 && 9 > LOWER.main.$main.dataset.day;

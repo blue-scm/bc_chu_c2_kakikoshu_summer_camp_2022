@@ -7,6 +7,7 @@ export default class Counter {
 
         this.$counter = document.getElementById('counter');
         this.$display = this.$counter.querySelector('dd');
+        this.$btn = this.$counter.querySelector('.counter__btn a');
         this.cmtid = this.$counter.dataset.cmtid;
         this.num = 0;
         this.utility = Utility;
@@ -18,7 +19,15 @@ export default class Counter {
 
     init() {
 
+        this.setAlready();
         this.getCounter();
+
+    }
+
+    setAlready() {
+
+        // カウンターボタンが押下済みの場合は、グレーアウト
+        STORAGE.data.state.already >= LOWER.main.$main.dataset.day && this.$btn.classList.add('-already');
 
     }
 
