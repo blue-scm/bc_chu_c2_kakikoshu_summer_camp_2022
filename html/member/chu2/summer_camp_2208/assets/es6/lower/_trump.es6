@@ -1,6 +1,6 @@
 export default class Trump {
     constructor() {
-        this.init();
+        /* this.init(); */
     }
 
     init() {

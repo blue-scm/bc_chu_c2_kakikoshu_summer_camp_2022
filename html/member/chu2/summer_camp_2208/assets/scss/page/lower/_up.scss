@@ -23,13 +23,16 @@
         position: relative;
 
         &:before {
-            @include absPosition(-0.625em, 0);
+            @include absPosition(-0.625em, 50%);
             content: attr(data-ruby);
             font-size: 0.625em;
             font-weight: bold;
             line-height: 1;
+            letter-spacing: -0.1em;
             text-align: center;
-            width: 100%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            /* width: 100%; */
         }
     }
 

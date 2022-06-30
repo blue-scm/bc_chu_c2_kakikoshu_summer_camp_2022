@@ -1,0 +1,53 @@
+@use "global"as *;
+
+#phinaCanvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.game_number {
+    @include absPosition($top: calc(50% + 100px), $right: 80px);
+    background-color: #ffff90;
+    border-radius: 10px;
+    padding: 25px;
+    transform: translateY(-50%);
+    width: 450px;
+}
+
+.game_number__ttl {
+    margin: -90px 0 0 -90px;
+}
+
+.game_number__txt {
+    @include fontsize(16);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 10px;
+
+    span {
+        position: relative;
+
+        &:before {
+            @include absPosition(-0.625em, 0);
+            content: attr(data-ruby);
+            font-size: 0.625em;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    strong {
+        color: #ef3131;
+        font-weight: 900;
+    }
+
+    .-blue & {
+        color: #0057a1;
+    }
+
+    .-green & {
+        color: #00695c;
+    }
+}

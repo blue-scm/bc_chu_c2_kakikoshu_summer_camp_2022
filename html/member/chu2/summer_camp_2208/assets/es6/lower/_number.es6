@@ -1,17 +1,14 @@
-<section id="game_number" class="game_number">
+export default class Number {
+    constructor() {
+       /*  this.init(); */
+    }
 
-    <h2 class="up__ttl">
-        <img src="<%= img %>lower/<%= data.color %>/ttl_up.png" alt="ノブさんの1分間集中力UPチャレンジ！">
-    </h2>
+    init() {
+        this.gamenumber();
+    }
 
-    <p class="up__txt"><%- data.up_txt %></p>
-
-    <div class="up__ph">
-        <!-- phina.js を読み込む -->
-<script src="//cdn.rawgit.com/phi-jp/phina.js/v0.2.0/build/phina.js"></script>
-<!-- メイン処理 -->
-        <script>
-    $(window).on('load', function() {
+    gamenumber() {
+        $(window).on('load', function() {
         /*
          * Runstant
          * 思いたったらすぐ開発. プログラミングに革命を...
@@ -42,10 +39,10 @@
                 'return': './assets/img/lower/number/return.png'
             },
         };
-        var SCREEN_WIDTH = 420*0.9;
-        var SCREEN_HEIGHT = 396*0.9;
+        var SCREEN_WIDTH = 420;
+        var SCREEN_HEIGHT = 396;
         var MAX_PER_LINE = 5; // ピースの横に並ぶ最大数
-        var PIECE_SIZE = 50*0.9; // マスのサイズ
+        var PIECE_SIZE = 50; // マスのサイズ
         var BOARD_PADDING = 20;
         var MAX_NUM = MAX_PER_LINE * MAX_PER_LINE; // ピース全体の数
         var BOARD_SIZE = SCREEN_WIDTH - BOARD_PADDING * 5; // マスのサイズ
@@ -67,8 +64,8 @@
                 this.superInit();
                 this.backgroundColor = 'rgba(255,213,5)';
                 var sprite = Sprite('title').addChildTo(this);
-                sprite.x = 210*0.9;
-                sprite.y = 199*0.9;
+                sprite.x = 210;
+                sprite.y = 199;
                 // ローカルストレージ取得
                 var data = JSON.parse(localStorage.getItem('member/chu2/summer_camp_2208/index'));
                 // 現在の日時
@@ -84,8 +81,8 @@
                 } else {
                     sprite = Sprite('start').addChildTo(this); // スタート
                 }
-                sprite.x = 210*0.9;
-                sprite.y = 340*0.9;
+                sprite.x = 210;
+                sprite.y = 340;
                 sprite.setInteractive(true); // タッチを有効にする
                 // sprite.onpointend = function(){
                 //   this.exit();
@@ -116,12 +113,12 @@
                 });
                 this.backgroundColor = 'rgba(255,213,5)';
                 var sprite = Sprite('main_bg').addChildTo(this);
-                sprite.x = 210*0.9;
-                sprite.y = 199*0.9;
+                sprite.x = 210;
+                sprite.y = 199;
                 var self = this;
                 var sprite = Sprite('return').addChildTo(this); // もどるボタン
-                sprite.x = 60*0.9;
-                sprite.y = 20*0.9;
+                sprite.x = 60;
+                sprite.y = 20;
                 sprite.setInteractive(true); // タッチを有効にする
                 sprite.onpointend = function() {
                     self.exit('title'); // スタート画面に戻る
@@ -150,8 +147,8 @@
                 // タイマーラベルを生成
                 var timerLabel = Label('0').addChildTo(this);
                 timerLabel.origin.x = 1;
-                timerLabel.x = 238*0.9; // タイマーの位置
-                timerLabel.y = 52*0.63;
+                timerLabel.x = 238; // タイマーの位置
+                timerLabel.y = 52;
                 timerLabel.fill = '#444';
                 timerLabel.fontSize = 17; // タイマーのフォントサイズ
                 // timerLabel.align = 'right';
@@ -200,17 +197,17 @@
                 this.backgroundColor = 'rgba(162,219,214)';
                 this.backgroundColor = 'rgba(255,213,5)';
                 var sprite = Sprite('finish_bg').addChildTo(this);
-                sprite.x = 210*0.9;
-                sprite.y = 199*0.9;
+                sprite.x = 210;
+                sprite.y = 199;
                 var self = this;
                 Label({
                     text: param.resultTime + '秒',
                     fontSize: 32,
                     fill: 'rgba(66,66,66)',
-                }).addChildTo(this).setPosition(this.gridX.center(0), this.gridY.span(10));
+                }).addChildTo(this).setPosition(this.gridX.center(0), this.gridY.span(9.87));
                 var sprite = Sprite('retry').addChildTo(this); // もう一回
-                sprite.x = 210*0.9;
-                sprite.y = 340*0.9;
+                sprite.x = 210;
+                sprite.y = 340;
                 sprite.setInteractive(true); // タッチを有効にする
                 sprite.onpointend = function() {
                     self.exit('title');
@@ -247,10 +244,5 @@
             app.run();
         });
     });
-
-</script>
-        <canvas id="phinaCanvas"></canvas>
-
-    </div>
-
-</section><!-- /.up -->
+}
+}
