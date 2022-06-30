@@ -11,7 +11,7 @@
     <nav class="slider__inner">
 
         <% slider_day.forEach((val, i) => { %>
-            <p class="slider__day">
+            <p class="slider__day" data-day="<%= i + 1 %>">
                 <a href="./day<%= i + 1 %>.html">
                     <img src="<%= img %>common/ico_day<%= i + 1 %>.svg" alt="DAY<%= i + 1 %>">
                     <time>
@@ -22,21 +22,21 @@
         <% }) %>
 
         <p class="slider__day -complete">
-            <button class="js-modal__open" data-id="complete">
-                <img src="<%= img %>slider/ico_omake.png" alt="OMAKE">
+            <a href="#" class="js-modal__open" data-id="complete">
+                <img src="<%= img %>top/slider/ico_omake.png" alt="OMAKE">
                 <span>ノブさんの修了証</span>
-            </button>
+            </a>
         </p>
 
         <p class="slider__marktest">
             <a href="https://library.benesse.ne.jp/keijiban_member/cblog.shtml?id=mark_gassyuku_2208">
-                <img src="<%= img %>slider/btn_marktest.svg" alt="8/7（日）21（日）〈マークテスト〉一斉取り組み合宿">
+                <img src="<%= img %>top/slider/btn_marktest.svg" alt="8/7（日）21（日）〈マークテスト〉一斉取り組み合宿">
             </a>
         </p>
 
         <dl class="slider__news">
             <dt>
-                <img src="<%= img %>slider/ttl_news.png" alt="9月号のお知らせ 8/27（土）・28（日）ゼミソングフェスティバル">
+                <img src="<%= img %>top/slider/ttl_news.png" alt="9月号のお知らせ 8/27（土）・28（日）ゼミソングフェスティバル">
             </dt>
             <dd>音楽でチャレ友と盛り上がって、夏休み明けに向けた<strong>やる気をチャージしよう! </strong>　これから「かんばん」などでお知らせしていくよ。<br>
                 ぜひチェックしてね。</dd>

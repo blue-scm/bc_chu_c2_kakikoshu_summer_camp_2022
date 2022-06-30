@@ -48,11 +48,14 @@
     align-items: center;
     display: flex;
     height: 100%;
+    padding: 0 0 150px 75px;
     width: 3684px;
 }
 
 .slider__day {
     flex-shrink: 0;
+    margin-left: 45px;
+    position: relative;
     width: 234px;
 
     a {
@@ -61,9 +64,19 @@
         border-radius: 100vh;
         display: block;
         filter: drop-shadow(0 0 10px rgba(#000, 0.3));
-        line-height: 50px;
-        padding-left: 60px;
+        line-height: calc(50px - 0.1em);
+        padding: 0 0 0.1em 60px;
         position: relative;
+
+        &:after {
+            @include absPosition($top: 50%, $right: 18px);
+            border-right: 2px solid #fff;
+            border-top: 2px solid #fff;
+            content: '';
+            height: 10px;
+            transform: translateY(-50%) rotate(45deg);
+            width: 10px;
+        }
     }
 
     img {
@@ -75,24 +88,144 @@
     time {
         @include fontsize(19);
         color: #fff;
+        display: block;
         font-weight: 900;
     }
 
     em {
         @include fontsize(30);
         font-style: normal;
+        vertical-align: top;
+    }
+
+    &:before {
+        @include absPosition(100%, 80px);
+        border-left: 3px dotted #fff;
+        content: '';
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    &[data-day='1']:before {
+        height: 60px;
+    }
+
+    &[data-day='2']:before {
+        height: 140px;
+    }
+
+    &[data-day='3']:before,
+    &[data-day='10']:before {
+        height: 100px;
+    }
+
+    &[data-day='4']:before {
+        height: 80px;
+    }
+
+    &[data-day='5']:before,
+    &[data-day='7']:before {
+        height: 40px;
+    }
+
+    &[data-day='6']:before {
+        height: 90px;
+    }
+
+    &[data-day='8']:before {
+        height: 120px;
+    }
+
+    &[data-day='9']:before {
+        height: 70px;
     }
 
     &:nth-child(2n) {
-        margin-top: -200px;
+        margin-bottom: 200px;
     }
 
-    &.-complete {}
+    &.-complete {
+        margin: 0 0 355px -5px;
+        width: 195px;
+
+        a {
+            border-width: 3px;
+            line-height: calc(30px - 0.1em);
+            padding-left: 40px;
+
+            &:after {
+                border-width: 1px;
+                height: 6px;
+                right: 10px;
+                width: 6px;
+            }
+        }
+
+        img {
+            width: 70px;
+        }
+
+        span {
+            @include fontsize(16);
+            color: #fff;
+            display: block;
+            font-weight: bold;
+        }
+
+        &:before {
+            @include absPosition(0, -90px);
+            border-left: 5px dotted #fff;
+            border-top: 5px dotted #fff;
+            border-top-left-radius: 100%;
+            content: '';
+            height: 70px;
+            width: 70px;
+            z-index: -1;
+        }
+    }
 }
 
-.slider__marktest {}
+.slider__marktest {
+    flex-shrink: 0;
+    margin: -100px 0 0 -130px;
+    width: 300px;
 
-.slider__news {}
+    a {
+        display: block;
+        filter: drop-shadow(0 0 10px rgba(#000, 0.3));
+    }
+}
+
+.slider__news {
+    margin: 0 0 0 40px;
+    width: 270px;
+
+    dt img {
+        margin: auto;
+    }
+
+    dd {
+        @include fontsize(12);
+        background-color: #ffff90;
+        border-radius: 6px;
+        font-weight: bold;
+        line-height: 1.4;
+        margin: 0;
+        padding: 5px 10px;
+        position: relative;
+
+        &:after {
+            @include absPosition($bottom: -10px, $right: -45px);
+            content: url(#{$img}top/slider/ph_risu.png);
+            font-size: 0;
+        }
+    }
+
+    strong {
+        color: #c12828;
+        font-weight: 900;
+    }
+}
 
 .slider__arrow {
     @include absPosition($top: 50%);
