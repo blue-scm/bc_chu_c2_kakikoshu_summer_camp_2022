@@ -30,33 +30,31 @@ export default class Modal {
             $closeArray = [...document.querySelectorAll('.js-modal__close')];
 
         $openArray.forEach($open => {
-            $open.addEventListener('click', e => this.setOpen(e));
+            $open.addEventListener('click', () => this.setOpen($open));
         });
 
         $closeArray.forEach($close => {
-            $close.addEventListener('click', e => this.setClose(e));
+            $close.addEventListener('click', () => this.setClose($close));
         });
 
     }
 
-    setOpen(e) {
+    setOpen($open) {
 
-        const id = e.currentTarget.dataset.id,
-            scene = e.currentTarget.dataset.scene,
+        const id = $open.dataset.id,
+            scene = $open.dataset.scene,
             $target = document.getElementById(id);
 
-        e.preventDefault();
         $target.classList.add('-active');
 
         scene && this.initial.setScene(scene);
 
     }
 
-    setClose(e) {
+    setClose($close) {
 
-        const $target = e.currentTarget.closest('.-active');
+        const $target = $close.closest('.-active');
 
-        e.preventDefault();
         $target.classList.remove('-active');
 
         if ($target.id == 'welcome') {

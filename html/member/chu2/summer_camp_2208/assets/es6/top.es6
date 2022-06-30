@@ -11,7 +11,9 @@ window.TIMER = new Timer();
 UT.deepFreeze(CONFIG);
 
 import Main from './top/_main';
+import Slider from './top/_slider';
 import Modal from './common/_modal';
 window.TOP = {};
 TOP.main = new Main();
+TOP.slider = new Slider();
 window.MODAL = new Modal();
