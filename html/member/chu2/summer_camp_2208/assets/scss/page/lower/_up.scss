@@ -15,7 +15,6 @@
 
 .up__txt {
     @include fontsize(16);
-    color: #0057a1;
     font-weight: bold;
     line-height: 1.5;
     margin-top: 10px;
@@ -37,6 +36,14 @@
     strong {
         color: #ef3131;
         font-weight: 900;
+    }
+
+    .-blue & {
+        color: #0057a1;
+    }
+
+    .-green & {
+        color: #00695c;
     }
 }
 

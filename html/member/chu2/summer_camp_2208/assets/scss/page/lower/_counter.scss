@@ -2,7 +2,6 @@
 
 .counter {
     align-items: center;
-    background-image: url(#{$img}lower/blue/bg_tile.png);
     border-top-right-radius: 40px;
     color: #fff;
     display: flex;
@@ -12,6 +11,14 @@
     padding: 0 40px;
     text-align: center;
     width: 670px;
+
+    .-blue & {
+        background-image: url(#{$img}lower/blue/bg_tile.png);
+    }
+
+    .-green & {
+        background-image: url(#{$img}lower/green/bg_tile.png);
+    }
 }
 
 .counter__display {
@@ -23,6 +30,7 @@
         @include absPosition($left: 0, $bottom: calc(100% + 6px));
         @include fontsize(25);
         color: #ffff46;
+        white-space: nowrap;
         width: 100%;
 
         strong,
@@ -33,7 +41,6 @@
             &:before {
                 @include absPosition(50%);
                 content: attr(data-txt);
-                -webkit-text-stroke: 10px #0057a1;
                 transform: translateY(-50%);
                 z-index: -1;
             }
@@ -42,6 +49,7 @@
         strong {
             @include fontsize(36);
             font-family: urw-din-condensed, sans-serif;
+            margin-right: 0.1em;
         }
     }
 
@@ -56,7 +64,6 @@
             @include fontsize(46);
             background-color: #fff;
             border-radius: 4px;
-            color: #0057a1;
             line-height: calc(98px - 0.1em);
             padding-bottom: 0.1em;
             width: 46px;
@@ -66,6 +73,30 @@
             @include absPosition($left: calc(100% + 4px), $bottom: 0);
             @include fontsize(24);
             content: '人';
+        }
+    }
+
+    .-blue & {
+
+        dt strong:before,
+        dt span:before {
+            -webkit-text-stroke: 10px #0057a1;
+        }
+
+        dd span {
+            color: #0057a1;
+        }
+    }
+
+    .-green & {
+
+        dt strong:before,
+        dt span:before {
+            -webkit-text-stroke: 10px #00695c;
+        }
+
+        dd span {
+            color: #00695c;
         }
     }
 }

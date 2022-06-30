@@ -1,14 +1,25 @@
-<section class="header">
+<section id="header" class="header">
+
     <h1 class="header__ttl">
-        <img src="<%= img %>lower/ttl_ai-navi.png" alt="AI Navi でレッスン｜オンラインライブの授業・動画を見る">
+
+        <% if (9 > data.day) { %>
+            <img src="<%= img %>lower/ttl_ai-navi.png" alt="AI Navi でレッスン｜オンラインライブの授業・動画を見る">
+        <% } else { %>
+            <img src="<%= img %>lower/ttl_marktest.png" alt="夏期講習総まとめ！〈実力診断マークテスト〉">
+        <% } %>
+
     </h1>
+
     <p class="header__day">
-        <img src="<%= img %>common/ico_day1.svg" alt="DAY1">
+        <img src="<%= img %>common/ico_day<%= data.day %>.svg" alt="DAY<%= data.day %>">
     </p>
+
     <p class="header__date">
         <strong data-txt="7">7</strong>月<strong data-txt="21">21</strong>日 はこれをやろう!
     </p>
+
     <p class="header__close">
         <a href="./index.html">とじる</a>
     </p>
+
 </section><!-- /.header -->

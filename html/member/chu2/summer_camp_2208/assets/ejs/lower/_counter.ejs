@@ -1,16 +1,28 @@
-<div id="counter" class="counter" data-cmtid="20000001">
+<div id="counter" class="counter" data-cmtid="<%= data.cmtid %>">
+
     <dl class="counter__display">
         <dt>
-            <strong data-txt="DAY1">DAY1</strong><span data-txt="の取り組み人数">の取り組み人数</span>
+            <strong data-txt="DAY<%= data.day %>">DAY<%= data.day %></strong><span data-txt="の取り組み人数">の取り組み人数</span>
         </dt>
         <dd>
             <span>0</span><span>0</span><span>0</span><span>0</span><span>0</span>
         </dd>
     </dl>
+
     <p class="counter__btn">
-        <a href="https://d.benesse.ne.jp/zemi/top">
-            <img src="<%= img %>lower/btn_ai-navi.svg" alt="AI NAVI レッスンへGO！">
-        </a>
-        <span>※タップすると、ホーム画面に戻るよ。</span>
+
+        <% if (9 > data.day) { %>
+            <a href="https://d.benesse.ne.jp/zemi/top">
+                <img src="<%= img %>lower/btn_ai-navi.svg" alt="AI NAVI レッスンへGO！">
+            </a>
+            <span>※タップすると、ホーム画面に戻るよ。</span>
+        <% } else { %>
+            <a href="https://cgaku.benesse.ne.jp/kw/member/top/mark/">
+                <img src="<%= img %>lower/btn_marktest.svg" alt="〈実力診断マークテスト〉を提出する!">
+            </a>
+            <span>※タップすると、「課題提出」のページが開くよ。</span>
+        <% } %>
+
     </p>
+
 </div><!-- /.counter -->

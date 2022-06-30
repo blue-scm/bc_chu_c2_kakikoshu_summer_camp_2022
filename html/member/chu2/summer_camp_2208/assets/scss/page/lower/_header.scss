@@ -8,6 +8,10 @@
     position: relative
 }
 
+.header__ttl img[src*='ttl_marktest'] {
+    margin-bottom: -70px;
+}
+
 .header__day {
     @include absPosition(25px, 25px);
     width: 160px;
@@ -18,9 +22,7 @@
     @include absPosition(136px, 105px);
     @include fontsize(26);
     background-color: #ffff46;
-    border: 4px solid #0057a1;
     border-radius: 0 100vh 100vh 0;
-    color: #0057a1;
     font-weight: 900;
     line-height: calc(36px - 0.2em);
     padding: 0 0 0.2em 85px;
@@ -39,6 +41,16 @@
             transform: translateY(-50%);
             z-index: -1;
         }
+    }
+
+    .-blue & {
+        border: 4px solid #0057a1;
+        color: #0057a1;
+    }
+
+    .-green & {
+        border: 4px solid #00695c;
+        color: #00695c;
     }
 }
 
