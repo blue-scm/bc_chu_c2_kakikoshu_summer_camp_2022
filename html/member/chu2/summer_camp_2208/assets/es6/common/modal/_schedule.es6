@@ -19,6 +19,7 @@ export default class Schedule {
 
     init() {
 
+        this.initTab();
         this.addTab();
         this.addToggle();
         this.addSetting();
@@ -26,10 +27,22 @@ export default class Schedule {
 
     }
 
+    initTab() {
+
+        if (STORAGE.data.state.calendar != 'setting') return;
+
+        // マイスケジュールを登録していた場合、予めタブを切り替える
+        this.$calendar.dataset.tab = 1;
+
+        this.setRecommend();
+
+    }
+
     addTab() {
 
         const $tabArray = [...this.$calendar.querySelectorAll('.schedule__tab button')];
 
+        // スケジュールのタブ押下時
         $tabArray.forEach(($tab, i) => {
             $tab.addEventListener('click', () => this.$calendar.dataset.tab = i);
         });
@@ -40,13 +53,21 @@ export default class Schedule {
 
         const $toggle = this.$recommend.querySelector('.schedule__toggle');
 
+        // 「〇月から取り組みたいキミはこちら！」ボタン押下時
         $toggle.addEventListener('click', () => {
             STORAGE.data.state.month = STORAGE.data.state.month == 'july' ? 'august' : 'july';
-            const recommendDate = CONFIG.RECOMMEND_DATE[STORAGE.data.state.month];
             this.$recommend.dataset.month = STORAGE.data.state.month;
             this.$recommendDate.forEach($date => $date.dataset.day = '');
-            UT.once(this.$recommend, 'transitionend', () => this.setDay(recommendDate, 'recommend'));
+            UT.once(this.$recommend, 'transitionend', () => this.setRecommend());
         });
+
+    }
+
+    setRecommend() {
+
+        // オススメスケジュールを設定
+        const recommendDate = CONFIG.RECOMMEND_DATE[STORAGE.data.state.month];
+        this.setDay(recommendDate, 'recommend');
 
     }
 
@@ -54,7 +75,7 @@ export default class Schedule {
 
         const $sec = this.$calendar.querySelector(`.schedule__cont .-${calendar}`);
 
-        // スケジュールに日付を一括設定
+        // 指定した日付をカレンダーに一括表示
         dateArray.forEach((date, i) => {
             const $date = $sec.querySelector(`[data-date='${date}']`);
             $date.dataset.day = i + 1;
@@ -64,6 +85,7 @@ export default class Schedule {
 
     addSetting() {
 
+        // マイスケジュールの日付押下時
         this.$settingDate.forEach(($date, i) => {
             $date.addEventListener('click', e => this.setSetting(e, i));
         });
@@ -113,10 +135,12 @@ export default class Schedule {
 
     addBtn() {
 
+        // オススメスケジュールの「決定！」ボタン押下時
         this.$recommendDecision.addEventListener('click', () => {
             this.nextScene(CONFIG.RECOMMEND_DATE[STORAGE.data.state.month], 'recommend');
         });
 
+        // マイスケジュールの「前日の選択に戻る」ボタン押下時
         this.$settingBack.addEventListener('click', () => {
 
             // 現在の日付・吹き出し削除
@@ -136,6 +160,7 @@ export default class Schedule {
 
         });
 
+        // マイスケジュールの「決定！」ボタン押下時
         this.$settingDecision.addEventListener('click', () => {
             const $currentDay = [...this.$setting.querySelectorAll('[data-date]:not([data-day=""])')],
                 settingDate = [];
@@ -147,11 +172,16 @@ export default class Schedule {
 
     nextScene(settingDate, calendar) {
 
-        STORAGE.data.state.calendar ? MODAL.setClose(MODAL.initial.$initial) : MODAL.initial.setScene('howto');
+        // 初回は次に「10日間夏期講習とは」を表示、初回以外はモーダルを閉じる
+        STORAGE.data.settingDate.length ? MODAL.setClose(MODAL.initial.$initial) : MODAL.initial.setScene('howto');
 
         STORAGE.data.settingDate = settingDate;
         STORAGE.data.state.calendar = calendar;
         STORAGE.set();
+
+        // スライダーの日付設定・アニメーション
+        TOP.slider.setDay();
+        TOP.slider.initialSliding(1500);
 
     }
 

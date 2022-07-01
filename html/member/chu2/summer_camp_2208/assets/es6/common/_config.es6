@@ -12,7 +12,7 @@ export const Config = {
     LOCAL_STORAGE: {
         DATA: {
             settingDate: [],
-            state: { welcome: false, guideTap: false, calendar: null, month: 'july', already: 0 },
+            state: { welcome: false, guideTap: false, calendar: null, month: 'july', done: 0 },
             trump: { date: new Date(), count: 0 },
             number: { date: new Date(), count: 0 }
         },

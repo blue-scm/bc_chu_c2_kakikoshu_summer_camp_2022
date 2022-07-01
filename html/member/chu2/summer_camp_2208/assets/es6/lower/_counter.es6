@@ -19,15 +19,15 @@ export default class Counter {
 
     init() {
 
-        this.setAlready();
+        this.setDone();
         this.getCounter();
 
     }
 
-    setAlready() {
+    setDone() {
 
         // カウンターボタンが押下済みの場合は、グレーアウト
-        STORAGE.data.state.already >= LOWER.main.$main.dataset.day && this.$btn.classList.add('-already');
+        STORAGE.data.state.done >= LOWER.main.$main.dataset.day && this.$btn.classList.add('-done');
 
     }
 

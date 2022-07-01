@@ -23,12 +23,16 @@ export default class Main {
 
     addTransitionend() {
 
+        // ウェルカムモーダルが閲覧済みで、スケジュールが未設定の場合、オススメスケジュールを表示
         UT.once(this.$main, 'transitionend', () => {
-            if (STORAGE.data.state.welcome && !STORAGE.data.state.calendar || STORAGE.data.state.calendar == 'setting') {
-                const recommendDate = CONFIG.RECOMMEND_DATE[STORAGE.data.state.month];
-                MODAL.schedule.setDay(recommendDate, 'recommend');
+
+            if (STORAGE.data.state.welcome && !STORAGE.data.settingDate.length) {
+                MODAL.schedule.setRecommend();
             }
-            STORAGE.data.state.calendar == 'setting' && (MODAL.schedule.$calendar.dataset.tab = 1);
+
+            // スライダーのアニメーション
+            TOP.slider.initialSliding(1500);
+
         });
 
     }

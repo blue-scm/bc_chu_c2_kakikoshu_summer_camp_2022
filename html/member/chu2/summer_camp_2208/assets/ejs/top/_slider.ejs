@@ -1,19 +1,13 @@
 <div id="slider" class="slider">
 
-    <p class="slider__bird -left">
-        <img class="js-timer" data-end="2022/8/7" src="<%= img %>top/slider/txt_board_0807.png" alt="8/7（日）〈マークテスト〉合宿開さい！">
-        <img class="js-timer" data-start="2022/8/7" data-end="2022/8/7 12:00" src="<%= img %>top/slider/txt_board_today.png" alt="本日10:00～〈マークテスト〉合宿開さい！">
-        <img class="js-timer" data-start="2022/8/7 12:00" data-end="2022/8/21" src="<%= img %>top/slider/txt_board_0821.png" alt="8/21（日）〈マークテスト〉合宿開さい！">
-        <img class="js-timer" data-start="2022/8/21" data-end="2022/8/21 12:00" src="<%= img %>top/slider/txt_board_today.png" alt="本日10:00～〈マークテスト〉合宿開さい！">
-        <img class="js-timer" data-start="2022/8/21 12:00" src="<%= img %>top/slider/txt_board_end.png" alt="夏期講習おつかれさま！">
-    </p>
-
     <nav class="slider__inner">
 
         <% slider_day.forEach((val, i) => { %>
             <p class="slider__day" data-day="<%= i + 1 %>">
                 <a href="./day<%= i + 1 %>.html">
-                    <img src="<%= img %>common/ico_day<%= i + 1 %>.svg" alt="DAY<%= i + 1 %>">
+                    <span>
+                        <img src="<%= img %>common/ico_day<%= i + 1 %>.svg" alt="DAY<%= i + 1 %>">
+                    </span>
                     <time>
                         <em><%= val.month %></em>月<em><%= val.date %></em>日（<%= val.day %>）
                     </time>
@@ -22,8 +16,7 @@
         <% }) %>
 
         <button class="slider__complete js-modal__open" data-id="complete">
-            <img src="<%= img %>top/slider/ico_omake.png" alt="OMAKE">
-            <span>ノブさんの修了証</span>
+            <img src="<%= img %>top/slider/ico_omake.png" alt="OMAKE">ノブさんの修了証
         </button>
 
         <p class="slider__marktest">
@@ -41,6 +34,14 @@
         </dl>
 
     </nav>
+
+    <p class="slider__bird -left">
+        <img class="js-timer" data-end="2022/8/7" src="<%= img %>top/slider/txt_board_0807.png" alt="8/7（日）〈マークテスト〉合宿開さい！">
+        <img class="js-timer" data-start="2022/8/7" data-end="2022/8/7 12:00" src="<%= img %>top/slider/txt_board_today.png" alt="本日10:00～〈マークテスト〉合宿開さい！">
+        <img class="js-timer" data-start="2022/8/7 12:00" data-end="2022/8/21" src="<%= img %>top/slider/txt_board_0821.png" alt="8/21（日）〈マークテスト〉合宿開さい！">
+        <img class="js-timer" data-start="2022/8/21" data-end="2022/8/21 12:00" src="<%= img %>top/slider/txt_board_today.png" alt="本日10:00～〈マークテスト〉合宿開さい！">
+        <img class="js-timer" data-start="2022/8/21 12:00" src="<%= img %>top/slider/txt_board_end.png" alt="夏期講習おつかれさま！">
+    </p>
 
     <button class="slider__arrow -prev">←</button>
     <button class="slider__arrow -next">→</button>

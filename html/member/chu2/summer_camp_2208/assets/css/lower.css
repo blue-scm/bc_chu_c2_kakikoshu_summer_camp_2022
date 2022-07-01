@@ -926,7 +926,7 @@ iframe[name=google_conversion_frame] {
   display: block;
   transition: 0.2s;
 }
-.counter__btn a.-already {
+.counter__btn a.-done {
   filter: grayscale(1) opacity(0.9);
 }
 .counter__btn img[src*=btn_ai-navi] {

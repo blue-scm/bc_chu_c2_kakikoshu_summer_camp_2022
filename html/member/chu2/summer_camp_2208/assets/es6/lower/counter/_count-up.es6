@@ -41,8 +41,8 @@ export default class CountUp {
         this.counter.utility.setDisplay();
 
         // カウンターボタンを押下済みに設定
-        this.counter.$btn.classList.add('-already');
-        STORAGE.data.state.already++;
+        this.counter.$btn.classList.add('-done');
+        STORAGE.data.state.done++;
         STORAGE.set();
 
         // リダイレクト

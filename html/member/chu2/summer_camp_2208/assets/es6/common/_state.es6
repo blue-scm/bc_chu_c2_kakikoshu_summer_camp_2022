@@ -19,6 +19,9 @@ export default class State {
         // パラメータを取得
         this.getParam();
 
+        // パラメータをサイト内リンクに付与
+        this.addParam();
+
         // 今日の日付を変更
         this.changeToday();
 
@@ -36,6 +39,16 @@ export default class State {
             const key = param[i].split('=');
             this.obj[key[0]] = key[1];
         }
+
+    }
+
+    addParam() {
+
+        if (!this.obj) return;
+
+        const $linkArray = [...document.querySelectorAll('a:not([href^="#"]):not([target="_blank"])')];
+
+        $linkArray.forEach($link => $link.href += location.search);
 
     }
 

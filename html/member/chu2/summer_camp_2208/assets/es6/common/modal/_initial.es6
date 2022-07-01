@@ -18,7 +18,7 @@ export default class Initial {
 
     setFirstVisit() {
 
-        if (STORAGE.data.state.calendar) return;
+        if (STORAGE.data.settingDate.length) return;
 
         this.$initial.classList.add('-active');
         this.$close.style.display = 'none';
@@ -30,17 +30,22 @@ export default class Initial {
         this.$initial.dataset.scene = scene;
         this.$close.style.display = 'block';
 
-        STORAGE.data.state.calendar && (this.$inner.style.transition = 'none');
+        // 初回以外は横スライドのアニメーションを無効
+        STORAGE.data.settingDate.length && (this.$inner.style.transition = 'none');
 
         if (scene != 'schedule') return;
 
+        // 初回以外でスケジュールを開いた場合、登録したスケジュールを表示
         UT.once(this.$initial, 'transitionend', () => {
+
             const dateArray = STORAGE.data.state.calendar == 'recommend' ? CONFIG.RECOMMEND_DATE[STORAGE.data.state.month] : STORAGE.data.settingDate;
             MODAL.schedule.setDay(dateArray, STORAGE.data.state.calendar);
+
             if (STORAGE.data.state.calendar == 'setting') {
                 MODAL.schedule.currentDay = 10;
                 MODAL.schedule.setBtn();
             }
+
         });
 
     }
