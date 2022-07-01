@@ -153,16 +153,16 @@ export default class CountUp {
     }
 
     addCounter() {
-        /* let addcounter = false;
+        var addcounter = false;
 
         if (!addcounter){
             return;
-        } */
+        }
 
         // カウンターボタン押下時
         this.counter.$btn.addEventListener('click', (e) => this.getCountUp(e));
       
-        /* addcounter = true; */
+        A
     }
 
     getCountUp(e) {
