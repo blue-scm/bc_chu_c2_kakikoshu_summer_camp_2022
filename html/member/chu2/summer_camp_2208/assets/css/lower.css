@@ -1470,4 +1470,15 @@ img.clear {
   bottom: -20px;
   right: -40px;
   width: 120px;
+  height: 120px;
+  background: url(../img/lower/green/btn_answer.svg) no-repeat 0 0/100%;
+}
+.-blue .up__answer {
+  background: url(../img/lower/blue/btn_answer.svg) no-repeat 0 0/100%;
+}
+.-answer .up__answer {
+  background: url(../img/lower/green/btn_question.svg) no-repeat 0 0/100%;
+}
+.-blue .-answer .up__answer {
+  background: url(../img/lower/blue/btn_question.svg) no-repeat 0 0/100%;
 }

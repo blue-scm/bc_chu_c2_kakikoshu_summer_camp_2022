@@ -1,4 +1,4 @@
-@use "global"as *;
+@use "global" as *;
 
 .slider {
     height: 100%;
@@ -7,8 +7,10 @@
 }
 
 .slider__bird {
-    @include absPosition(60px, 690px);
+    @include absPosition(30px, 310px);
     animation: slider__bird1 2s infinite;
+    pointer-events: none;
+    z-index: 1;
 
     @keyframes slider__bird1 {
         50% {
@@ -19,7 +21,7 @@
     &:before {
         animation: slider__bird2 0.075s steps(4) infinite alternate;
         background: url(#{$img}top/slider/ph_bird.png) no-repeat;
-        content: '';
+        content: "";
         display: block;
         filter: drop-shadow(0 0 5px rgba(#000, 0.2));
         height: 34px;
@@ -75,7 +77,7 @@
             @include absPosition($top: 50%, $right: 18px);
             border-right: 2px solid #fff;
             border-top: 2px solid #fff;
-            content: '';
+            content: "";
             height: 10px;
             transform: translateY(-50%) rotate(45deg);
             width: 10px;
@@ -89,7 +91,7 @@
 
         &:after {
             @include absPosition($left: 2px, $bottom: -15px);
-            content:url(#{$img}top/slider/txt_special.svg);
+            content: url(#{$img}top/slider/txt_special.svg);
             display: none;
             line-height: 0;
             width: 100px;
@@ -112,12 +114,12 @@
     &:before {
         @include absPosition(100%, 80px);
         border-left: 3px dotted #fff;
-        content: '';
+        content: "";
         transform: scaleY(0);
         transform-origin: bottom;
     }
 
-    &[data-day='1'] {
+    &[data-day="1"] {
         span:after {
             display: block;
         }
@@ -127,29 +129,29 @@
         }
     }
 
-    &[data-day='2']:before {
+    &[data-day="2"]:before {
         height: 140px;
     }
 
-    &[data-day='3']:before,
-    &[data-day='10']:before {
+    &[data-day="3"]:before,
+    &[data-day="10"]:before {
         height: 100px;
     }
 
-    &[data-day='3'] span:after {
+    &[data-day="3"] span:after {
         display: block;
     }
 
-    &[data-day='4']:before {
+    &[data-day="4"]:before {
         height: 80px;
     }
 
-    &[data-day='5']:before,
-    &[data-day='7']:before {
+    &[data-day="5"]:before,
+    &[data-day="7"]:before {
         height: 40px;
     }
 
-    &[data-day='6'] {
+    &[data-day="6"] {
         span:after {
             display: block;
         }
@@ -159,16 +161,16 @@
         }
     }
 
-    &[data-day='8']:before {
+    &[data-day="8"]:before {
         height: 120px;
     }
 
-    &[data-day='9']:before {
+    &[data-day="9"]:before {
         height: 70px;
     }
 
     &:nth-child(2n) {
-        margin-bottom: 200px;
+        margin-bottom: 150px;
     }
 
     @for $i from 1 through 10 {
@@ -176,7 +178,7 @@
             opacity: 0;
         }
 
-        &[data-day='#{$i}'] span {
+        &[data-day="#{$i}"] span {
             background: url(#{$img}common/ico_day#{$i}_cs.svg) no-repeat;
         }
     }
@@ -210,14 +212,14 @@
         }
 
         @for $i from 1 through 10 {
-            &[data-day='#{$i}'] span {
+            &[data-day="#{$i}"] span {
                 background: url(#{$img}common/ico_day#{$i}_done.svg) no-repeat;
             }
         }
     }
 
     @for $i from 1 through 10 {
-        &[data-day='#{$i}'] {
+        &[data-day="#{$i}"] {
             a {
                 transition: 0.4s #{$i * 0.2 + 1.4}s;
             }
@@ -242,17 +244,24 @@
 
 .slider__complete {
     @include fontsize(16);
-    background-color: #f27e11;
+    background-color: #e1e1e1;
     border: 3px solid #fff;
     border-radius: 100vh;
     color: #fff;
     filter: drop-shadow(0 0 10px rgba(#000, 0.3));
     font-weight: bold;
     line-height: calc(30px - 0.1em);
-    margin: 0 0 355px -5px;
+    margin: 0 0 355px 0;
     padding: 0 0 0.1em 40px;
     text-align: left;
     width: 195px;
+    transform: translate(-90px, 0);
+    pointer-events: none;
+
+    &.-active {
+        pointer-events: auto;
+        background-color: #f27e11;
+    }
 
     img {
         @include absPosition(50%, 0);
@@ -265,7 +274,7 @@
         border-left: 5px dotted #fff;
         border-top: 5px dotted #fff;
         border-top-left-radius: 100%;
-        content: '';
+        content: "";
         height: 70px;
         width: 70px;
         z-index: -1;
@@ -275,7 +284,7 @@
         @include absPosition($top: 50%, $right: 10px);
         border-right: 1px solid #fff;
         border-top: 1px solid #fff;
-        content: '';
+        content: "";
         height: 6px;
         transform: translateY(-50%) rotate(45deg);
         width: 6px;
@@ -339,7 +348,7 @@
     &:before {
         border-right: 3px solid #0091db;
         border-top: 3px solid #0091db;
-        content: '';
+        content: "";
         display: inline-block;
         height: 15px;
         margin-right: 8px;

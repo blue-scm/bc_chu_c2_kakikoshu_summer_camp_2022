@@ -1,4 +1,4 @@
-@use "global"as *;
+@use "global" as *;
 
 .up {
     @include absPosition($top: calc(50% + 100px), $right: 80px);
@@ -72,7 +72,7 @@
     }
 
     @for $i from 1 through 10 {
-        [data-day='#{$i}'] & {
+        [data-day="#{$i}"] & {
             background: url(#{$img}lower/up/ph#{$i}_answer.png) no-repeat;
         }
     }
@@ -81,4 +81,19 @@
 .up__answer {
     @include absPosition($bottom: -20px, $right: -40px);
     width: 120px;
+    height: 120px;
+
+    background: url(#{$img}lower/green/btn_answer.svg) no-repeat 0 0 /100%;
+
+    .-blue & {
+        background: url(#{$img}lower/blue/btn_answer.svg) no-repeat 0 0 /100%;
+    }
+
+    .-answer & {
+        background: url(#{$img}lower/green/btn_question.svg) no-repeat 0 0 /100%;
+    }
+
+    .-blue .-answer & {
+        background: url(#{$img}lower/blue/btn_question.svg) no-repeat 0 0 /100%;
+    }
 }

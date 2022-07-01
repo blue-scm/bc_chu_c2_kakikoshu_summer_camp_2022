@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
+	<head>
 
-    <%- include('./common/_meta', { page: 'top' }) %>
+		<%- include('./common/_meta', { page: 'top' }) %>
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-    <header><!-- ベネッセヘッダー領域 --></header>
+		<header><!-- ベネッセヘッダー領域 --></header>
 
-    <main id="main" class="l-main -top">
+		<main id="main" class="l-main -top">
 
-        <%- include('./top/_header') %>
-        <%- include('./top/_slider') %>
-        <%- include('./top/_footer') %>
-        <%- include('./top/_talkroom') %>
+			<%- include('./top/_header') %>
+			<%- include('./top/_slider') %>
+			<%- include('./top/_footer') %>
+			<%- include('./top/_talkroom') %>
 
-        <%- include('./top/_m-welcome') %>
-        <%- include('./top/_m-initial') %>
-        <%- include('./top/_m-online') %>
-        <%- include('./top/_m-complete') %>
+			<%- include('./top/_m-welcome') %>
+			<%- include('./top/_m-initial') %>
+			<%- include('./top/_m-online') %>
+			<%- include('./top/_m-shuryosho') %>
+		</main>
+		<!-- /.l-main -->
 
-    </main><!-- /.l-main -->
+		<footer><!-- ベネッセフッター領域 --></footer>
 
-    <footer><!-- ベネッセフッター領域 --></footer>
+		<%- include('./common/_js', { page: 'top' }) %>
 
-    <%- include('./common/_js', { page: 'top' }) %>
-
-</body>
+	</body>
 
 </html>
