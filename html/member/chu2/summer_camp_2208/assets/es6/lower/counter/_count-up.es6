@@ -13,7 +13,7 @@ export default class CountUp {
     init() {
         
         this.addCounter();
-        this.doneCount();
+        /* this.doneCount(); */
 
         
  
