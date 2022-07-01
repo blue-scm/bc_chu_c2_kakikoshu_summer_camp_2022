@@ -14,6 +14,7 @@ export default class CountUp {
 
         this.addCounter();
 
+ 
     }
 
     addCounter() {
@@ -41,6 +42,13 @@ export default class CountUp {
     }
 
     setCountUp() {
+        const count1 = document.querySelector('[data-day="3"]');
+        const countbtn = count1.querySelector('.counter__btn a');
+
+        if (this.counter.$btn === countbtn) {
+            STORAGE.data.done.day3 = true;
+            STORAGE.set();
+        }
 
         // カウンター数を加算後にゼロパディング形式で表示
         this.counter.num += CONFIG.COUNTER.ADDITION;
@@ -56,13 +64,7 @@ export default class CountUp {
         setTimeout(() => terms ? BenesseBrowserView.transitionHome() : (location.href = this.href), 1000);
 
 
-        const count1 = document.querySelectorAll('[data-day="3"]');
-        const countbtn = count1.querySelector('.counter__btn a');
-
-        if (this.counter.$btn === countbtn) {
-            STORAGE.data.done.day3 = true;
-            STORAGE.set();
-        }
+        
         
 
     }
