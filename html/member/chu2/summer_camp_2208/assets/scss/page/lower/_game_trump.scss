@@ -1,0 +1,186 @@
+@use "global"as *;
+
+#wrap {
+    width: 346px;
+    height: 330px;
+    background-image: url(#{$img}lower/trump/bg.png);
+    margin: auto;
+    position: relative;
+}
+
+/* タイトル画面 */
+#start {
+    display: none;
+    margin: auto;
+    text-align: center;
+}
+
+#title {
+    padding-top: 10px;
+}
+
+#txt {
+    margin: 5px 20px 0;
+}
+
+#str_btn {
+    margin: 15px auto 0;
+    width: 194px;
+}
+
+/* ゲーム画面 */
+#return_btn {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+#panel {
+    width: 330px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+#return_timerbg {
+    margin: -20px 0 0 120px;
+}
+
+.card {
+    color: gray;
+    width: calc(55px*0.9);
+    height: calc(63px*0.9);
+    margin: 5px 8px;
+    line-height: calc(63px*0.9);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 3px 3px rgba(17, 17, 17, 0.25);
+    background: white;
+    float: left;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid #fbd954;
+
+    
+   
+    
+}
+
+/* 裏の状態 */
+.back {
+    background-image: url(#{$img}lower/trump/card.png);
+    background-size: cover;
+    stroke: yellow;
+    object-fit: cover;
+}
+
+/* 終了時 */
+.finish {
+    opacity: 0;
+    cursor: default;
+}
+
+/* 経過秒数 */
+#timer {
+    padding: 30px 0 10px 0;
+}
+
+#result {
+    color: #006473;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 158px;
+    margin-top: -30px;
+}
+
+/* クリア画面 */
+#sec {
+    box-sizing: content-box;
+    color: #006473;
+    background-image: url(#{$img}lower/trump/cleartime.png);
+    background-repeat: no-repeat;
+    background-position: 124px;
+    height: 82px;
+    display: none;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: -18px;
+    margin-top: -40px;
+    padding-top: 62px;
+    padding-left: 14px;
+    text-align: center;
+}
+
+#message {
+    text-align: center;
+    display: none;
+    padding-top: 20px;
+}
+
+img.clear {
+    width: 312px;
+}
+
+#cleartime {
+    display: none;
+    margin: auto;
+    margin-left: 110px;
+}
+
+#retry_btn {
+    display: none;
+    margin: auto;
+    margin-top: -8px;
+    margin-left: 96px;
+    padding: 10px;
+}
+
+.game_trump {
+    @include absPosition($top: calc(50% + 100px), $right: 80px);
+    background-color: #ffff90;
+    border-radius: 10px;
+    padding: 25px;
+    transform: translateY(-50%);
+    width: 450px;
+}
+
+.game_trump__ttl {
+    margin: -90px 0 0 -90px;
+}
+
+.game_trump__txt {
+    @include fontsize(16);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 10px;
+
+    span {
+        position: relative;
+
+        &:before {
+            @include absPosition(-0.625em, 0);
+            content: attr(data-ruby);
+            font-size: 0.625em;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    strong {
+        color: #ef3131;
+        font-weight: 900;
+    }
+
+    .-blue & {
+        color: #0057a1;
+    }
+
+    .-green & {
+        color: #00695c;
+    }
+}
