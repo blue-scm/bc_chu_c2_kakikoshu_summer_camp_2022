@@ -6,13 +6,15 @@ export default class CountUp {
         this.ua = window.navigator.userAgent;
         this.href = this.counter.$btn.href;
 
+        this.isAddCounter = false;
+
         this.init();
 
     }
 
     init() {
         
-        this.addCounter();
+        this.counter.$btn.addEventListener('click', (e) => this.getCountUp(e));
         this.doneCount();
 
         
@@ -152,27 +154,21 @@ export default class CountUp {
        
     }
 
-    addCounter() {
-        let addcounter = false;
-
-        if (!addcounter){
-            return;
-        }
-
-        // カウンターボタン押下時
-        this.counter.$btn.addEventListener('click', (e) => this.getCountUp(e));
-      
-        addcounter = true;
-    }
+    
 
     getCountUp(e) {
-
         e.preventDefault();
+
+        if (this.isAddCounter) {
+            return;
+        }
 
         const btnCnt = { BtnCntInsert: [{ ThmId: CONFIG.COUNTER.THM_ID, CmtId: this.counter.cmtid, BtnId: CONFIG.COUNTER.BTN_ID }] };
 
         // オプションを取得後に、カウントアップ
         $.ajax(this.counter.utility.getOption(btnCnt)).done(() => this.setCountUp());
+
+        this.isAddCounter = true;
 
     }
 
