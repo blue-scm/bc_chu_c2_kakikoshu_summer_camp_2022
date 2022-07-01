@@ -54,8 +54,53 @@ export default class Slider {
 
             // 取り組み済み
             /* STORAGE.data.state.done > i && $day.classList.add("-done"); */
-            if (STORAGE.data.done.day3 === true) {
-                var elems = document.getElementById('.slider__day').querySelectorAll('data-day="3"]');
+            if (STORAGE.data.state.day1 === true) {
+                var elems = document.querySelector('[data-day="1"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day2 === true) {
+                var elems = document.querySelector('[data-day="2"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day3 === true) {
+                var elems = document.querySelector('[data-day="3"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day4 === true) {
+                var elems = document.querySelector('[data-day="4"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day5 === true) {
+                var elems = document.querySelector('[data-day="5"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day6 === true) {
+                var elems = document.querySelector('[data-day="6"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day7 === true) {
+                var elems = document.querySelector('[data-day="7"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day8 === true) {
+                var elems = document.querySelector('[data-day="8"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day9 === true) {
+                var elems = document.querySelector('[data-day="9"]');
+
+                elems.classList.add('-done');
+            }
+            if (STORAGE.data.state.day10 === true) {
+                var elems = document.querySelector('[data-day="10"]');
 
                 elems.classList.add('-done');
             }
