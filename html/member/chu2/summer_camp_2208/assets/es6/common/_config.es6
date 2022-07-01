@@ -16,7 +16,7 @@ export const Config = {
                 guideTap: false,
                 calendar: null,
                 month: 'july',
-                done: false,
+                done: 0,
                 day1: false,
                 day2: false,
                 day3: false,
