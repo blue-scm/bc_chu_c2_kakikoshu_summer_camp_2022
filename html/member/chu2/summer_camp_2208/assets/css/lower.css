@@ -928,6 +928,7 @@ iframe[name=google_conversion_frame] {
 }
 .counter__btn a.-done {
   filter: grayscale(1) opacity(0.9);
+  pointer-events: none;
 }
 .counter__btn img[src*=btn_ai-navi] {
   margin-top: -18px;

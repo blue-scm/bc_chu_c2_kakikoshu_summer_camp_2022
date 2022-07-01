@@ -153,7 +153,7 @@ export default class CountUp {
     }
 
     addCounter() {
-        var addcounter = false;
+        let addcounter = false;
 
         if (!addcounter){
             return;
@@ -162,7 +162,7 @@ export default class CountUp {
         // カウンターボタン押下時
         this.counter.$btn.addEventListener('click', (e) => this.getCountUp(e));
       
-        A
+        addcounter = true;
     }
 
     getCountUp(e) {
