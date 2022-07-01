@@ -27,7 +27,90 @@ export default class Counter {
     setDone() {
 
         // カウンターボタンが押下済みの場合は、グレーアウト
-        STORAGE.data.state.done >= LOWER.main.$main.dataset.day && this.$btn.classList.add('-done');
+        /* STORAGE.data.state.done >= LOWER.main.$main.dataset.day && this.$btn.classList.add('-done'); */
+
+        
+        if (STORAGE.data.state.day1 === true) {
+            const count1 = document.querySelector('[data-day="1"]');
+            if (count1) {
+                const elems = count1.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+
+        if (STORAGE.data.state.day2 === true) {
+            const count2 = document.querySelector('[data-day="2"]');
+            if (count2) {
+                const elems = count2.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day3 === true) {
+            const count = document.querySelector('[data-day="3"]');
+            if (count) {
+                const elems = count.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day4 === true) {
+            const count = document.querySelector('[data-day="4"]');
+            if (count) {
+                const elems = count.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day5 === true) {
+            const count5 = document.querySelector('[data-day="5"]');
+            if (count5) {
+                const elems = count5.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day6 === true) {
+            const count = document.querySelector('[data-day="6"]');
+            if (count) {
+                const elems = count.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day7 === true) {
+            const count = document.querySelector('[data-day="7"]');
+            if (count) {
+                const elems = count.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day8 === true) {
+            const count = document.querySelector('[data-day="8"]');
+            if (count) {
+                const elems = count.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day9 === true) {
+            const count = document.querySelector('[data-day="9"]');
+            if (count) {
+                const elems = count.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
+        if (STORAGE.data.state.day10 === true) {
+            const count = document.querySelector('[data-day="10"]');
+            if (count) {
+                const elems = count.querySelector('.counter__btn a');
+
+                elems.classList.add('-done');
+            }
+        }
 
     }
 

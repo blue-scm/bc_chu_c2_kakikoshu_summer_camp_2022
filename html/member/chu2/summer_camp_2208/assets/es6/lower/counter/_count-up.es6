@@ -23,17 +23,23 @@ export default class CountUp {
         if (count1) {
             const countbtn1 = count1.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn1) {
+            countbtn1.addEventListener('click', btnCnt);
+
+            function btnCnt(){
                 STORAGE.data.state.day1 = true;
                 STORAGE.set();
             }
+
+            
         }
         
         const count2 = document.querySelector('[data-day="2"]');
         if (count2) {
             const countbtn2 = count2.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn2) {
+            countbtn2.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day2 = true;
                 STORAGE.set();
             }
@@ -44,7 +50,9 @@ export default class CountUp {
         if (count3) {
             const countbtn3 = count3.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn3) {
+            countbtn3.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day3 = true;
                 STORAGE.set();
             }
@@ -55,7 +63,9 @@ export default class CountUp {
         if (count4) {
             const countbtn4 = count4.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn4) {
+            countbtn4.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day4 = true;
                 STORAGE.set();
             }
@@ -65,9 +75,10 @@ export default class CountUp {
         const count5 = document.querySelector('[data-day="5"]');
         if (count5) {
             const countbtn5 = count5.querySelector('.counter__btn a');
-            console.log(7898798);
 
-            if (this.counter.$btn === countbtn5) {
+            countbtn5.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day5 = true;
                 STORAGE.set();
             }
@@ -78,7 +89,9 @@ export default class CountUp {
         if (count6) {
             const countbtn6 = count6.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn6) {
+            countbtn6.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day6 = true;
                 STORAGE.set();
             }
@@ -89,7 +102,9 @@ export default class CountUp {
         if (count7) {
             const countbtn7 = count7.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn7) {
+            countbtn7.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day7 = true;
                 STORAGE.set();
             }
@@ -100,7 +115,9 @@ export default class CountUp {
         if (count8) {
             const countbtn8 = count8.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn8) {
+            countbtn8.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day8 = true;
                 STORAGE.set();
             }
@@ -111,7 +128,9 @@ export default class CountUp {
         if (count9) {
             const countbtn9 = count9.querySelector('.counter__btn a');
 
-            if (this.counter.$btn === countbtn9) {
+            countbtn9.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day9 = true;
                 STORAGE.set();
             }
@@ -122,7 +141,9 @@ export default class CountUp {
         if (count10) {
             const countbtn10 = count10.querySelector('.counter__btn a');
              
-            if (this.counter.$btn === countbtn10) {
+            countbtn10.addEventListener('click', btnCnt);
+
+            function btnCnt() {
                 STORAGE.data.state.day10 = true;
                 STORAGE.set();
             }
