@@ -11,8 +11,9 @@ export default class CountUp {
     }
 
     init() {
-        this.doneCount();
+        
         this.addCounter();
+        this.doneCount();
 
         
  
