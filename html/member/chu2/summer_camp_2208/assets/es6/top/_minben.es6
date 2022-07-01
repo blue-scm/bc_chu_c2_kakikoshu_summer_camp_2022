@@ -20,9 +20,17 @@ export default class Minben {
         };
 
         //送信するオブジェクトのインターフェイスはこちらに沿ってください
+        // const kv = {
+        //     start_date: "2022/7/18",
+        //     end_date: "2022/7/21",
+        //     image: map.image[state],
+        //     image_mini: map.image_mini[0],
+        // };
+
+        //テスト用日付
         const kv = {
-            start_date: "2022/7/18",
-            end_date: "2022/7/21",
+            start_date: "2022/7/1",
+            end_date: "2022/8/31",
             image: map.image[state],
             image_mini: map.image_mini[0],
         };
