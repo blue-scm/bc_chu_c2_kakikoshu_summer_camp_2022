@@ -102,25 +102,26 @@
     color: #006473;
     background-image: url(#{$img}lower/trump/cleartime.png);
     background-repeat: no-repeat;
-    background-position: 124px;
+    background-position: 97px;
     height: 82px;
     display: none;
     font-size: 30px;
     font-weight: bold;
     margin-left: -18px;
-    margin-top: -40px;
-    padding-top: 62px;
-    padding-left: 14px;
+    margin-top: -33px;
+    padding-top: 50px;
+    padding-left: 30px;
     text-align: center;
 }
 
 #message {
     text-align: center;
     display: none;
-    padding-top: 20px;
+    padding-top: 6px;
 }
 
 img.clear {
+    margin: 0 auto;
     width: 312px;
 }
 
@@ -133,9 +134,9 @@ img.clear {
 #retry_btn {
     display: none;
     margin: auto;
-    margin-top: -8px;
-    margin-left: 96px;
-    padding: 10px;
+    margin-top: -18px;
+    margin-left: 76px;
+    /* padding: 10px; */
 }
 
 .game_trump {

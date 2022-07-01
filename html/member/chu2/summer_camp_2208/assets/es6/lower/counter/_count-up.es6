@@ -17,10 +17,16 @@ export default class CountUp {
     }
 
     addCounter() {
+        let addcounter = false;
+
+        if (!addcounter){
+            return;
+        }
 
         // カウンターボタン押下時
-        this.counter.$btn.addEventListener('click', e => this.getCountUp(e));
+        this.counter.$btn.addEventListener('click', (e) => this.getCountUp(e));
 
+        addcounter = true;
     }
 
     getCountUp(e) {
@@ -48,6 +54,16 @@ export default class CountUp {
         // リダイレクト
         const terms = this.ua.indexOf('BenesseBrowser') != -1 && 9 > LOWER.main.$main.dataset.day;
         setTimeout(() => terms ? BenesseBrowserView.transitionHome() : (location.href = this.href), 1000);
+
+
+        const count1 = document.querySelectorAll('[data-day="3"]');
+        const countbtn = count1.querySelector('.counter__btn a');
+
+        if (this.counter.$btn === countbtn) {
+            STORAGE.data.done.day3 = true;
+            STORAGE.set();
+        }
+        
 
     }
 

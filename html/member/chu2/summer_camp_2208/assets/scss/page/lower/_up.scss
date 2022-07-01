@@ -73,7 +73,7 @@
 
     @for $i from 1 through 10 {
         [data-day="#{$i}"] & {
-            background: url(#{$img}lower/up/ph#{$i}_answer.png) no-repeat;
+            background: url(#{$img}lower/up/ph#{$i}_answer.png) no-repeat top / cover;
         }
     }
 }

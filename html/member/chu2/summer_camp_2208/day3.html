@@ -142,7 +142,7 @@
         // ローカルストレージ取得
         data = JSON.parse(localStorage.getItem('member/chu2/summer_camp_2208/index'));
         // プレイ回数が回復する日付
-        console.log(789879879879878);
+     
         var limit = new Date(data.trump.date);
         limit = new Date(limit.getFullYear(), limit.getMonth(), limit.getDate() + 1);
         if (current.getTime() > limit.getTime()) {
@@ -150,7 +150,7 @@
         }
         if (2 < data.trump.count) {
             var str_img = document.getElementById('str_img');
-            str_img.setAttribute('src', 'assets/img/trump/no_play.png');
+            str_img.setAttribute('src', './assets/img/lower/trump/no_play.png');
         }
     }
 
@@ -286,7 +286,7 @@
             <div id="timer">
                 <!-- 戻るボタン -->
                 <div id="return_btn" onclick="Button2_Click();"><img src="./assets/img/lower/trump/return_btn.png"></div>
-                <img src="./assets/img/lower/trump/timer.png" alt="タイマー">
+                <img id="return_timerbg" src="./assets/img/lower/trump/timer.png" alt="タイマー">
                 <div id="result">0秒</div>
             </div>
             <div id="panel"></div>

@@ -1090,25 +1090,26 @@ iframe[name=google_conversion_frame] {
   color: #006473;
   background-image: url(../img/lower/trump/cleartime.png);
   background-repeat: no-repeat;
-  background-position: 124px;
+  background-position: 97px;
   height: 82px;
   display: none;
   font-size: 30px;
   font-weight: bold;
   margin-left: -18px;
-  margin-top: -40px;
-  padding-top: 62px;
-  padding-left: 14px;
+  margin-top: -33px;
+  padding-top: 50px;
+  padding-left: 30px;
   text-align: center;
 }
 
 #message {
   text-align: center;
   display: none;
-  padding-top: 20px;
+  padding-top: 6px;
 }
 
 img.clear {
+  margin: 0 auto;
   width: 312px;
 }
 
@@ -1121,9 +1122,9 @@ img.clear {
 #retry_btn {
   display: none;
   margin: auto;
-  margin-top: -8px;
-  margin-left: 96px;
-  padding: 10px;
+  margin-top: -18px;
+  margin-left: 76px;
+  /* padding: 10px; */
 }
 
 .game_trump {
@@ -1335,6 +1336,7 @@ img.clear {
   line-height: 1.8;
   min-height: calc(12.6em + 1px);
   padding-bottom: 1px;
+  text-shadow: 0px -2px 3px #fff;
 }
 .nobu__txt strong {
   color: #ef3131;
@@ -1435,34 +1437,34 @@ img.clear {
   opacity: 0;
 }
 [data-day="1"] .up__ph {
-  background: url(../img/lower/up/ph1_answer.png) no-repeat;
+  background: url(../img/lower/up/ph1_answer.png) no-repeat top/cover;
 }
 [data-day="2"] .up__ph {
-  background: url(../img/lower/up/ph2_answer.png) no-repeat;
+  background: url(../img/lower/up/ph2_answer.png) no-repeat top/cover;
 }
 [data-day="3"] .up__ph {
-  background: url(../img/lower/up/ph3_answer.png) no-repeat;
+  background: url(../img/lower/up/ph3_answer.png) no-repeat top/cover;
 }
 [data-day="4"] .up__ph {
-  background: url(../img/lower/up/ph4_answer.png) no-repeat;
+  background: url(../img/lower/up/ph4_answer.png) no-repeat top/cover;
 }
 [data-day="5"] .up__ph {
-  background: url(../img/lower/up/ph5_answer.png) no-repeat;
+  background: url(../img/lower/up/ph5_answer.png) no-repeat top/cover;
 }
 [data-day="6"] .up__ph {
-  background: url(../img/lower/up/ph6_answer.png) no-repeat;
+  background: url(../img/lower/up/ph6_answer.png) no-repeat top/cover;
 }
 [data-day="7"] .up__ph {
-  background: url(../img/lower/up/ph7_answer.png) no-repeat;
+  background: url(../img/lower/up/ph7_answer.png) no-repeat top/cover;
 }
 [data-day="8"] .up__ph {
-  background: url(../img/lower/up/ph8_answer.png) no-repeat;
+  background: url(../img/lower/up/ph8_answer.png) no-repeat top/cover;
 }
 [data-day="9"] .up__ph {
-  background: url(../img/lower/up/ph9_answer.png) no-repeat;
+  background: url(../img/lower/up/ph9_answer.png) no-repeat top/cover;
 }
 [data-day="10"] .up__ph {
-  background: url(../img/lower/up/ph10_answer.png) no-repeat;
+  background: url(../img/lower/up/ph10_answer.png) no-repeat top/cover;
 }
 
 .up__answer {

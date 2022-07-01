@@ -14,7 +14,7 @@ const CONFIG = {
         img: PROJECT_ROOT + "/assets/img/",
     },
     OPTION: {
-        proxy: "localhost:8112",
+        proxy: "localhost:8552",
         es6: true,
         ts: false,
         ejs: true,

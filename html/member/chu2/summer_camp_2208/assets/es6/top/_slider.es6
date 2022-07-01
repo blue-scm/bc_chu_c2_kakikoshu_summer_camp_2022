@@ -53,7 +53,12 @@ export default class Slider {
             STATE.today >= date && nowDay++;
 
             // 取り組み済み
-            STORAGE.data.state.done > i && $day.classList.add("-done");
+            /* STORAGE.data.state.done > i && $day.classList.add("-done"); */
+            if (STORAGE.data.done.day3 === true) {
+                var elems = document.getElementById('.slider__day').querySelectorAll('data-day="3"]');
+
+                elems.classList.add('-done');
+            }
         });
 
         //みんべん送信処理
