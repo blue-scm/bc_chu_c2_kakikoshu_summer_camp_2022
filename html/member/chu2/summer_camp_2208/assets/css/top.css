@@ -1201,7 +1201,7 @@ iframe[name=google_conversion_frame] {
   width: 668px;
 }
 .m-welcome__cont img {
-  margin: 90px auto 0;
+  margin: 0 auto;
 }
 .m-welcome__cont button {
   font-size: 1.9375rem;
@@ -1232,6 +1232,15 @@ iframe[name=google_conversion_frame] {
   transform: rotate(45deg);
 }
 
+.m-welcome__txt {
+  margin: 30px 0 0 94px;
+  width: 441px;
+}
+
+.m-welcome__ttl {
+  margin-top: -16px;
+}
+
 .m-welcome__nobu {
   position: absolute;
   bottom: 0;
@@ -1248,23 +1257,37 @@ iframe[name=google_conversion_frame] {
 .m-welcome__name {
   position: absolute;
   bottom: 20px;
-  right: 65px;
-  font-size: 1.0625rem;
+  right: 50px;
   background-color: #fff;
-  border-radius: 100vh;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 10px 0 4px;
+  opacity: 0;
+  transition: 0.4s 1.8s;
+  width: 228px;
+}
+.-show .m-welcome__name {
+  opacity: 1;
+}
+
+.m-welcome__name__role {
+  margin: 0 auto;
+  width: 168px;
+}
+
+.m-welcome__name__txt {
+  font-size: 1.0625rem;
   color: #0057a1;
   font-weight: 900;
   line-height: calc(40px - 0.3em);
-  opacity: 0;
+  margin: 2px auto 0;
   padding-top: 0.3em;
-  transition: 0.4s 1.8s;
   width: 194px;
 }
-.m-welcome__name span {
+.m-welcome__name__txt span {
   position: relative;
 }
-.m-welcome__name span:before {
+.m-welcome__name__txt span:before {
   position: absolute;
   top: -0.8em;
   left: 50%;
@@ -1276,9 +1299,6 @@ iframe[name=google_conversion_frame] {
   white-space: nowrap;
   /* width: 100%; */
 }
-.-show .m-welcome__name {
-  opacity: 1;
-}
 
 .slider {
   height: 100%;
@@ -1288,8 +1308,8 @@ iframe[name=google_conversion_frame] {
 
 .slider__bird {
   position: absolute;
-  top: 30px;
-  left: 310px;
+  top: 48px;
+  left: 345px;
   -webkit-animation: slider__bird1 2s infinite;
           animation: slider__bird1 2s infinite;
   pointer-events: none;
@@ -1440,7 +1460,7 @@ iframe[name=google_conversion_frame] {
   height: 70px;
 }
 .slider__day:nth-child(2n) {
-  margin-bottom: 150px;
+  margin-bottom: 65px;
 }
 .slider__day img {
   opacity: 0;
@@ -1984,6 +2004,27 @@ iframe[name=google_conversion_frame] {
   justify-content: space-between;
   margin-top: 20px;
   position: relative;
+  /* [data-month='july'] {
+      button &[data-day='1']:after {
+          content: url(../img/common/ico_day1_g.svg);
+      }
+      button &[data-day='3']:after {
+          content: url(../img/common/ico_day3_g.svg);
+      }
+
+      button &[data-day='5']:after {
+          content: url(../img/common/ico_day5_g.svg);
+      }
+
+      button &[data-day='7']:after {
+          content: url(../img/common/ico_day7_g.svg);
+      }
+
+      button &[data-day='9']:after {
+          content: url(../img/common/ico_day8_g.svg);
+      }
+
+  } */
 }
 .schedule__table button {
   background-color: #fff;
@@ -2096,11 +2137,59 @@ iframe[name=google_conversion_frame] {
 .schedule__table button[data-day="10"]:after {
   content: url(../img/common/ico_day10.svg);
 }
+[data-tab="1"] .schedule__table button[data-day="1"]:after {
+  content: url(../img/common/ico_day1_g.svg);
+}
+.schedule__table button[data-day="2"]:after {
+  content: url(../img/common/ico_day2_b.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="2"]:after {
+  content: url(../img/common/ico_day2.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="3"]:after {
+  content: url(../img/common/ico_day3_g.svg);
+}
+.schedule__table button[data-day="4"]:after {
+  content: url(../img/common/ico_day4_b.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="4"]:after {
+  content: url(../img/common/ico_day4.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="5"]:after {
+  content: url(../img/common/ico_day5_g.svg);
+}
+.schedule__table button[data-day="6"]:after {
+  content: url(../img/common/ico_day6_b.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="6"]:after {
+  content: url(../img/common/ico_day6.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="7"]:after {
+  content: url(../img/common/ico_day7_g.svg);
+}
+.schedule__table button[data-day="8"]:after {
+  content: url(../img/common/ico_day8_b.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="8"]:after {
+  content: url(../img/common/ico_day8.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="9"]:after {
+  content: url(../img/common/ico_day9_g.svg);
+}
+.schedule__table button[data-day="10"]:after {
+  content: url(../img/common/ico_day10_b.svg);
+}
+[data-tab="1"] .schedule__table button[data-day="10"]:after {
+  content: url(../img/common/ico_day10.svg);
+}
+[data-tab="1"] .schedule__table button .schedule__table[data-day="1"]:after {
+  content: url(../img/common/ico_day1_g.svg);
+}
 .schedule__table p {
   font-size: 0.6875rem;
   background-color: #e1e1e1;
   height: calc((100% - 27px) / 6);
-  line-height: 1.5;
+  line-height: 1.3;
   margin-top: 2px;
   padding: 6px 10px;
   width: calc(100% - (100% - 12px) / 7 - 2px);
@@ -2109,9 +2198,17 @@ iframe[name=google_conversion_frame] {
   position: absolute;
   top: 0;
   left: 0;
-  content: url(../img/top/m-initial/bg_calendar.svg);
   pointer-events: none;
   width: 100%;
+}
+[data-month=july] .schedule__table:after {
+  content: url(../img/top/m-initial/bg_calendar.svg);
+}
+[data-month=august] .schedule__table:after {
+  content: url(../img/top/m-initial/bg_calendar_2.svg);
+}
+[data-tab="1"] .schedule__table:after {
+  content: url(../img/top/m-initial/bg_calendar_2.svg);
 }
 [data-month=july] .schedule__table p span {
   display: none;

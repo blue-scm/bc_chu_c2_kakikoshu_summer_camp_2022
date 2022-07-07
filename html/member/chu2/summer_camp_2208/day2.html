@@ -74,11 +74,11 @@
     </div>
 
     <div class="nobu__txt">
-        <p>AI Naviでレッスンに取り組むと、キミの学習<span data-ruby="じょうきょう">状況</span>に応じて習熟スコアが変化するよ！　今日のレッスンに取り組んだら、キミの習熟スコアもチェックしよう。</p>
+        <p>AI Naviでレッスンに取り組むと、キミの学習<span data-ruby="じょうきょう">状況</span>に応じて習熟スコアが変化するよ！<br>今日のレッスンに取り組んだら、キミの習熟スコアもチェックしよう。</p>
     </div>
 
 </div><!-- /.nobu -->
-        <div id="counter" class="counter" data-cmtid="20000002">
+        <div id="counter" class="counter" data-cmtid="21071508">
 
     <dl class="counter__display">
         <dt>
@@ -106,13 +106,16 @@
         <img src="./assets/img/lower/green/ttl_up.png" alt="ノブさんの1分間集中力UPチャレンジ！" />
     </h2>
 
-    <p class="up__txt">今日はバーベキュー！　野菜や果物が<span data-ruby="かく">隠</span>れているよ。<br>タテ・ヨコ・ナナメで６個以上探してね！<br>※バーベキューに適さないものもあるよ。</p>
+    <p class="up__txt">今日はバーベキュー！　食材が<span data-ruby="かく">隠</span>れているよ。<br>タテ・ヨコ・ナナメで６個以上探してね！<br>※バーベキューに適さないものもあるよ。</p>
 
     <div class="up__ph">
         <p>
             <img src="./assets/img/lower/up/ph2.png" alt="" />
         </p>
-        <button class="js-modal__open" data-id="scale">
+        <button class="js-modal__open up_scale_btn -question" data-id="scale">
+            <img src="./assets/img/lower/green/ico_scale.svg" alt="" />
+        </button>
+        <button class="js-modal__open up_scale_btn -answer" data-id="scale-answer">
             <img src="./assets/img/lower/green/ico_scale.svg" alt="" />
         </button>
     </div>
@@ -131,6 +134,15 @@
     <button class="m-scale__close js-modal__close">とじる</button>
 
 </div><!-- /.m-scale -->
+        <div id="scale-answer" class="m-scale">
+
+    <p class="m-scale__ph">
+        <img src="./assets/img/lower/up/ph2_answer.png" alt="">
+    </p>
+
+    <button class="m-scale__close js-modal__close">とじる</button>
+
+</div><!-- /.m-scale -->
 
     </main><!-- /.l-main -->
 
@@ -138,7 +150,7 @@
 
     <script src="/member/chu_all/_common/talkroom/assets/js/baeclient_2020.js"></script>
 <script src="/member/chu_all/_common/talkroom/assets/js/talkroom.js"></script>
-<script src="/member/chu_all/_common/minben/kvsclient/assets/js/kvs_client.js"></script>
+<!-- <script src="/member/chu_all/_common/minben/kvsclient/assets/js/kvs_client.js"></script> -->
 <script src="./assets/js/vendor.js"></script>
 <script src="./assets/js/lower.js"></script>
 

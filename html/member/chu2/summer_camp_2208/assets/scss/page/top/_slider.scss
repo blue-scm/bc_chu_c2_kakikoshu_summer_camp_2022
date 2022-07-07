@@ -7,7 +7,7 @@
 }
 
 .slider__bird {
-    @include absPosition(30px, 310px);
+    @include absPosition(48px, 345px);
     animation: slider__bird1 2s infinite;
     pointer-events: none;
     z-index: 1;
@@ -168,7 +168,7 @@
     }
 
     &:nth-child(2n) {
-        margin-bottom: 150px;
+        margin-bottom: 65px;
     }
 
     @for $i from 1 through 10 {

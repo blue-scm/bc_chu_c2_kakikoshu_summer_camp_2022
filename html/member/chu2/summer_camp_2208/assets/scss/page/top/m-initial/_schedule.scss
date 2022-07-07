@@ -301,13 +301,109 @@
                 content: url(#{$img}common/ico_day#{$i}.svg);
             }
         }
+
+        &[data-day='1']:after {
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day1_g.svg);
+            }
+        }
+
+        &[data-day='2']:after {
+            content: url(#{$img}common/ico_day2_b.svg);
+
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day2.svg);
+            }
+        }
+
+        &[data-day='3']:after {
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day3_g.svg);
+            }
+        }
+
+        &[data-day='4']:after {
+            content: url(#{$img}common/ico_day4_b.svg);
+
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day4.svg);
+            }
+        }
+
+        &[data-day='5']:after {
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day5_g.svg);
+            }
+        }
+
+        &[data-day='6']:after {
+            content: url(#{$img}common/ico_day6_b.svg);
+
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day6.svg);
+            }
+        }
+
+        &[data-day='7']:after {
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day7_g.svg);
+            }
+        }
+
+        &[data-day='8']:after {
+            content: url(#{$img}common/ico_day8_b.svg);
+
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day8.svg);
+            }
+        }
+
+        &[data-day='9']:after {
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day9_g.svg);
+            }
+        }
+
+        &[data-day='10']:after {
+            content: url(#{$img}common/ico_day10_b.svg);
+
+            [data-tab='1'] & {
+                content: url(#{$img}common/ico_day10.svg);
+            }
+        }
     }
+
+    [data-tab='1'] & button &[data-day='1']:after {
+        content: url(#{$img}common/ico_day1_g.svg);
+    }
+
+    /* [data-month='july'] {
+        button &[data-day='1']:after {
+            content: url(#{$img}common/ico_day1_g.svg);
+        }
+        button &[data-day='3']:after {
+            content: url(#{$img}common/ico_day3_g.svg);
+        }
+
+        button &[data-day='5']:after {
+            content: url(#{$img}common/ico_day5_g.svg);
+        }
+
+        button &[data-day='7']:after {
+            content: url(#{$img}common/ico_day7_g.svg);
+        }
+
+        button &[data-day='9']:after {
+            content: url(#{$img}common/ico_day8_g.svg);
+        }
+
+    } */
 
     p {
         @include fontsize(11);
         background-color: #e1e1e1;
         height: calc((100% - 27px) / 6);
-        line-height: 1.5;
+        line-height: 1.3;
         margin-top: 2px;
         padding: 6px 10px;
         width: calc(100% - (100% - 12px) / 7 - 2px);
@@ -316,9 +412,20 @@
 
     &:after {
         @include absPosition(0, 0);
-        content: url(#{$img}top/m-initial/bg_calendar.svg);
         pointer-events: none;
         width: 100%;
+    }
+
+    [data-month='july'] &:after {
+        content: url(#{$img}top/m-initial/bg_calendar.svg);
+    }
+
+    [data-month='august'] &:after {
+        content: url(#{$img}top/m-initial/bg_calendar_2.svg);
+    }
+
+    [data-tab='1'] &:after {
+        content: url(#{$img}top/m-initial/bg_calendar_2.svg);
     }
 
     [data-month='july'] & p span {

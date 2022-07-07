@@ -1,4 +1,4 @@
-import Minben from "./_minben.es6";
+/* import Minben from "./_minben.es6"; */
 
 export default class Slider {
     constructor() {
@@ -20,7 +20,7 @@ export default class Slider {
         this.currentSlider = 0; // スライダーの現在位置
         this.threshold = 5; // スライドするためのスワイプ範囲（スライド範囲 / threshold）
 
-        this.minben = new Minben(); //みんべんクライアント
+        /* this.minben = new Minben(); //みんべんクライアント */
 
         this.init();
     }
@@ -112,7 +112,7 @@ export default class Slider {
             stateIndex = 10; //ALL DONE時は11番目の画像にする
         }
 
-        this.minben.send(stateIndex);
+        /* this.minben.send(stateIndex); */
 
         //のぶさんボタン有効化
         if (STORAGE.data.state.done === 10) {

@@ -1387,15 +1387,15 @@ img.clear {
 .up__txt {
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.5;
-  margin-top: 10px;
+  line-height: 1.7;
+  margin-top: 4px;
 }
 .up__txt span {
   position: relative;
 }
 .up__txt span:before {
   position: absolute;
-  top: -0.625em;
+  top: -0.5em;
   left: 50%;
   content: attr(data-ruby);
   font-size: 0.625em;
@@ -1428,11 +1428,23 @@ img.clear {
 .up__ph p img {
   width: 100%;
 }
-.up__ph button {
+.up__ph .up_scale_btn {
   position: absolute;
   top: -10px;
   right: -10px;
   width: 42px;
+}
+.up__ph .up_scale_btn.-question {
+  display: block;
+}
+.-answer .up__ph .up_scale_btn.-question {
+  display: none;
+}
+.up__ph .up_scale_btn.-answer {
+  display: none;
+}
+.-answer .up__ph .up_scale_btn.-answer {
+  display: block;
 }
 .-answer .up__ph p {
   opacity: 0;

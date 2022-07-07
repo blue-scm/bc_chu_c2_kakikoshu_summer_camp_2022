@@ -16,14 +16,14 @@
 .up__txt {
     @include fontsize(16);
     font-weight: bold;
-    line-height: 1.5;
-    margin-top: 10px;
+    line-height: 1.7;
+    margin-top: 4px;
 
     span {
         position: relative;
 
         &:before {
-            @include absPosition(-0.625em, 50%);
+            @include absPosition(-0.5em, 50%);
             content: attr(data-ruby);
             font-size: 0.625em;
             font-weight: bold;
@@ -62,9 +62,23 @@
         }
     }
 
-    button {
+    .up_scale_btn {
         @include absPosition($top: -10px, $right: -10px);
         width: 42px;
+
+        &.-question {
+            display: block;
+            .-answer & {
+                display: none;
+            }
+        }
+
+        &.-answer {
+            display: none;
+            .-answer & {
+                display: block;
+            }
+        }
     }
 
     .-answer & p {
