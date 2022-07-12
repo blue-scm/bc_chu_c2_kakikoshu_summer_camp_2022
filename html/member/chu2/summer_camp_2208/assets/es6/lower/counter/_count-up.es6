@@ -16,8 +16,6 @@ export default class CountUp {
         
         this.counter.$btn.addEventListener('click', (e) => this.getCountUp(e));
         this.doneCount();
-
-        
  
     }
 
@@ -185,10 +183,10 @@ export default class CountUp {
         STORAGE.set();
 
         // リダイレクト
-        const terms = this.ua.indexOf('BenesseBrowser') == -1 && 9 > LOWER.main.$main.dataset.day;
-        if(9 <= LOWER.main.$main.dataset.day) {
+        const terms = this.ua.indexOf('BenesseBrowser') != -1 && 9 > LOWER.main.$main.dataset.day;
+        if (9 > LOWER.main.$main.dataset.day) {
             setTimeout(() => (terms ? BenesseBrowserView.transitionHome() : (location.href = this.href)), 1000);
-        }else {
+        } else if (9 <= LOWER.main.$main.dataset.day) {
             setTimeout(() => (terms ? BenesseBrowserView.transitionHome() : window.open(this.href, '_blank')), 1000);
         }
 
