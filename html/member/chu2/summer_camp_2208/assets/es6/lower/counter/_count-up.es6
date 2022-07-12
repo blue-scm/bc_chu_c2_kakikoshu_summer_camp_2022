@@ -171,8 +171,6 @@ export default class CountUp {
     }
 
     setCountUp() {
-        
-
         // カウンター数を加算後にゼロパディング形式で表示
         this.counter.num += CONFIG.COUNTER.ADDITION;
         this.counter.utility.setDisplay();
@@ -183,13 +181,13 @@ export default class CountUp {
         STORAGE.set();
 
         // リダイレクト
+        // 9日目以上ときで分岐
         const terms = this.ua.indexOf('BenesseBrowser') != -1 && 9 > LOWER.main.$main.dataset.day;
         if (9 > LOWER.main.$main.dataset.day) {
             setTimeout(() => (terms ? BenesseBrowserView.transitionHome() : (location.href = this.href)), 1000);
-        } else if (9 <= LOWER.main.$main.dataset.day) {
+        } else {
             setTimeout(() => (terms ? BenesseBrowserView.transitionHome() : window.open(this.href, '_blank')), 1000);
         }
-
     }
 
 }
