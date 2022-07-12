@@ -185,13 +185,11 @@ export default class CountUp {
         STORAGE.set();
 
         // リダイレクト
-        const terms = this.ua.indexOf('BenesseBrowser') != -1 && 9 > LOWER.main.$main.dataset.day;
-        setTimeout(() => terms ? BenesseBrowserView.transitionHome() : (location.href = this.href), 1000);
+        const terms = this.ua.indexOf('BenesseBrowser') == -1 && 9 > LOWER.main.$main.dataset.day;
+        setTimeout(() => terms ? BenesseBrowserView.transitionHome() : (window.open(this.href, '_blank')), 1000);
 
-
-        
-        
-
+        /* const terms =  9 > LOWER.main.$main.dataset.day;
+        setTimeout(() => (terms ? BenesseBrowserView.transitionHome() : window.open(this.href, '_blank')), 1000); */
     }
 
 }
