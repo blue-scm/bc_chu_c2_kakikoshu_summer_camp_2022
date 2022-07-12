@@ -586,6 +586,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
+  background: #000;
+}
+
+header, footer {
+  background: #fff;
 }
 
 img {
@@ -613,8 +618,13 @@ iframe[name=google_conversion_frame] {
   display: none;
 }
 
+#footer {
+  height: auto;
+}
+
 .l-main {
   color: #000;
+  background: #000;
   font-family: YakuHanJP_Noto, "Noto Sans JP", Sans-Serif;
   height: 731px;
   line-height: 1.6;

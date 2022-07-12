@@ -50,6 +50,11 @@ body {
     @include font-smoothing('on');
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
+    background: #000;
+}
+
+header, footer {
+    background: #fff;
 }
 
 img {
@@ -77,4 +82,8 @@ iframe[name="google_conversion_frame"] {
 #head01_wrapper,
 #foot_wrapper {
     display: none;
+}
+
+#footer {
+    height: auto;
 }
